@@ -32,6 +32,8 @@ a:hover {
   margin: 0 auto;
   background-color: yellow;
   display: flex; /* 가로 본능 자극 */
+  justify-content: space-between; /* jcsb */
+  /*  */
 }
 
 .wrap > div {
@@ -50,6 +52,7 @@ p {
   /* fz15+c#666 */
   font-weight: 15;
   color: #666;
+  margin-top: 50px;
 }
 
 a {
@@ -62,4 +65,5 @@ a {
 
 ul {
   display: flex;
+  margin-top: 60px;
 }
