@@ -125,3 +125,188 @@ img
 > a 태그 안에서 target = “\_blank”는 새 페이지로 이동시키는 명령어
 
 ## DAY2
+
+```html
+<ul>
+  - 비 순서형 목록 : 순서가 중요하지 않은 목록 - 예) 비슷한 태그끼리 묶어 놓음
+  요리재료,기사목록 ..
+  <ul>
+    <li>하위 태그</li>
+  </ul>
+  <!-- 보통 이런식으로 부모와 자식으로 묶임 -->
+</ul>
+```
+
+ol
+
+- 순서형 리스트
+- 실시간 검색 순위 성적등을 나열 할 때 사용
+
+```html
+<ol>
+  <li>li는 list item란 뜻</li>
+</ol>
+```
+
+dl
+
+- 정의형 목록
+- 용어 제목, 용어 설명 등
+
+```html
+<dl>
+  <dt>용어</dt>
+  <dd>설명</dd>
+</dl>
+```
+
+## ul,li 중첩 사용시 주의사항
+
+- ul,ol은 자식요소로 li만 넣을 수 있음
+
+```html
+<ul>
+  <ol></ol>
+</ul>
+X 사용할수 없음
+
+<ul>
+  <li>
+    <ol></ol>
+  </li>
+</ul>
+O 사용가능
+```
+
+- HTML 태그 정리 ❗
+
+  - 태그는 컨텐츠에 의미를 부여하는 행위
+  - 태그별로 의미가 있다.
+  - h1~h6 (hn) : 제목의 의미
+  - p : 문단( 글 덩어리)
+  - br : 줄바꿈을 위해 사용
+  - img : 이미지 삽입 src = 루트를 통해 상대,절대로 나뉜다 → figure > img 보통은 이런 형식으로 쓰인다.
+  - a : 링크 삽입
+  - strong : 내용 강조를 위해 사용 (em도 혼용 / 약한강조)
+  - ul>li : 순서는 상관 없이 아이템끼리의 연관성이 있을 때
+  - ol>li : 순서가 중요 하고 아이템끼리의 연관성도 있을 때
+  - dl>dt+dd : dt에 대한 설명 dd
+
+  > 강조사항
+  > emmet 단축어 사용시
+
+> > 꺽쇠 사용하고 이후 부모자식간의 관계가 아닌 그 다음 태그로 설정하기 위해서는 연산자 우선순위를 사용해야함
+
+예)
+
+```html
+<!-- ol>li*3(figure>img)+dl>dt+dd -->
+<ol>
+    <li>
+      <figure><img src="" alt=""></figure>
+      <dl>
+        <dt>
+          <dd></dd>
+        </dt>
+      </dl>
+    </li>
+    <li>
+      <figure><img src="" alt=""></figure>
+      <dl>
+        <dt>
+          <dd></dd>
+        </dt>
+      </dl>
+    </li>
+    <li>
+      <figure><img src="" alt=""></figure>
+      <dl>
+        <dt>
+          <dd></dd>
+        </dt>
+      </dl>
+    </li>
+  </ol>
+O 올바른 예
+
+<!-- ol>li*3>figure>img+dl>dt>dD -->
+<ol>
+    <li>
+      <figure>
+        <img src="" alt="">
+        <dl>
+          <dt>
+            <dD></dD>
+          </dt>
+        </dl>
+      </figure>
+    </li>
+    <li>
+      <figure>
+        <img src="" alt="">
+        <dl>
+          <dt>
+            <dD></dD>
+          </dt>
+        </dl>
+      </figure>
+    </li>
+    <li>
+      <figure>
+        <img src="" alt="">
+        <dl>
+          <dt>
+            <dD></dD>
+          </dt>
+        </dl>
+      </figure>
+    </li>
+  </ol>
+
+<!-- 보면 dl이 figure 자식으로 승계가 되었음 -->
+```
+
+### - 선택자
+
+— 웹페이지의 제목, 문단, 링크, 목록, 이미지 요소들을 선택
+
+- 전체 선택자 : \*
+- 요소 선택자 : 요소(태그) 이름
+- class , id : 작업자 전용
+- 기타 선택자 : 자식. 형제,속성 ,가상 요소,가상 클래스
+
+가상 클래스
+
+```css
+a:link {
+  color: blue;
+} /* 특정 링크에 적용 */
+a:visted {
+  color: gray;
+} /* 링크 눌렀을 경우 */
+a:hover {
+  color: gray;
+} /* 만약 마우스 오버가 됐을 경우 */
+a:active {
+  color: gray;
+}
+```
+
+### 선택자 조합
+
+```css
+div > a {
+  color: black;
+}
+
+/* div 자식인 a 태그다 싶은 것들에게 일괄적으로 적용 */
+```
+
+필수 암기 css 옵션
+
+```css
+flex
+position absolute relative
+margin 0 auto; <-> 가운데 정렬
+min-hegiht : 최소한 넓어지게 만듦
+```
