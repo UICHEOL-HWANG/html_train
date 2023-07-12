@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    perspective: 1000px;
+    /* 원근감  */
+} 
+
+.flip-btn{
+    width: 200px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    transform-style: preserve-3d;
+    /* 3d공간에 배치  */
+    transition: .5s;
+    cursor: pointer;
+}
+
+.front{
+    background-color: goldenrod;
+    height: 100px;
+    transform: translateZ(50px);
+}
+
+.flip-btn:hover{
+    transform: rotateX(-90deg);
+}
+
+.back{
+    background-color: darkgoldenrod;
+    height: 100px;
+    transform: rotateX(90deg) translateZ(150px);
+}

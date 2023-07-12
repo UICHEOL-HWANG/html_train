@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+/* 디자인 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none; /* lisn 약어 */
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 링크 아래 밑줄 삭제 */
+a {
+  text-decoration: none; /* tdn */
+  color: #000;
+}
+a:hover {
+  text-decoration: underline; /* tdu */
+  color: #f59;
+} /* 마우스가 올라가면 핑크색으로 글자가 바뀜 */
+
+.wrap {
+  width: 1200px;
+  min-height: 549px; /* 최소크기를 명령 */
+  margin: 0 auto;
+  background-color: yellow;
+  display: flex; /* 가로 본능 자극 */
+}
+
+.wrap > div {
+  width: 600px;
+  background-color: green;
+}
+
+h1 {
+  /* fw+fz+c */
+  font-weight: 500px;
+  font-size: 42px;
+  color: #333;
+}
+
+p {
+  /* fz15+c#666 */
+  font-weight: 15;
+  color: #666;
+}
+
+a {
+  /* w270+h60 */
+  width: 270px;
+  height: 60px;
+  background-color: #4181c3;
+  display: block; /* block 형식으로 바꾸어줘야 크기 너비가 적용된다 */
+}
+
+ul {
+  display: flex;
+}

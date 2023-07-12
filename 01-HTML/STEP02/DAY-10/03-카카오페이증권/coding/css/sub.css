@@ -1,0 +1,443 @@
+@charset 'utf-8';
+
+/* sub 공통 */
+main {
+  padding-top: 72px;
+}
+
+.sub-visual {
+  height: 422px;
+  overflow: hidden;
+  position: relative;
+}
+
+.sub-visual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 0 0 /cover no-repeat;
+  animation: sub-visual-ani 2.5s;
+}
+
+@keyframes sub-visual-ani {
+  0% {
+    opacity: 0;
+    transform: scale(2) rotate(-5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.sub-visual.sub01::before {
+  background-image: url(../images/top-visual-company-info.jpg);
+}
+
+.sub-visual.sub02::before {
+  background-image: url(../images/top-visual-retailfinance.jpg);
+}
+
+.sub-visual-title {
+  font-weight: 700;
+  font-size: 38px;
+  color: #fff;
+
+  position: absolute;
+  bottom: 43px;
+  left: 0;
+}
+
+.sub-section-title {
+  font-weight: 700;
+  font-size: 44px;
+  color: var(--black-light);
+}
+
+.sub-section-title.small {
+  font-size: 30px;
+}
+
+.sub-head {
+  height: 167px;
+}
+
+.sub-head .sub-head-title {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: 27px;
+  color: var(--black-light);
+}
+
+main section {
+  padding: 80px 0 100px;
+}
+
+/* 회사개요 */
+.company-info-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 52px;
+}
+
+.company-info-con>div {
+  width: 740px;
+}
+
+.company-info-con>div p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.company-info-con strong {
+  width: 271px;
+  height: 54px;
+  background: url(../images/kakao-bi-black.png) 0 0 no-repeat;
+}
+
+.company-vision {
+  background: #fafafa;
+}
+
+.company-vision p {
+  margin-top: 55px;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--black-light);
+}
+
+.value-list {
+  margin-top: 56px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.value-list li {
+  width: 25%;
+  text-align: center;
+}
+
+.value-list li dt {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: #e8edf3;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--black-light);
+}
+
+.value-list li:nth-child(even) dt {
+  background: #f2f2f2;
+}
+
+.value-list li dd {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-top: 35px;
+}
+
+.company-map p {
+  font-size: 18px;
+  margin-top: 56px;
+}
+
+.company-map .map {
+  height: 350px;
+  margin-top: 16px;
+}
+
+.company-map .map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* 비즈니스 */
+.business-info-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 52px;
+}
+
+.business-info-con>div {
+  width: 740px;
+}
+
+.business-info-con>div p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.business-info-con strong {
+  width: 271px;
+  height: 54px;
+  background: url(../images/kakao-bi-black.png) 0 0 no-repeat;
+}
+
+.business-con-box {
+  display: flex;
+  padding: 0;
+}
+
+.business-con-box>div {
+  width: 50%;
+}
+
+
+.business-con-box>div+div {
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  padding: 65px;
+}
+
+.business-con-box .title-box p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.business-con-box.business-financial {
+  flex-direction: row-reverse;
+}
+
+.business-con-box.business-financial>div+div {
+  justify-content: flex-end;
+}
+
+.business-con-box.business-financial>div figure {
+  padding: 65px 0 0 65px;
+}
+
+.business-con-box.business-investment>div figure {
+  text-align: right;
+}
+
+/* 공시정보 */
+main .sub-head+.inner {
+  padding: 0 0 118px;
+}
+
+.management-tab {
+  display: flex;
+}
+
+.management-tab li {
+  /* width: 50%; */
+  border-bottom: 1px solid var(--line-color);
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 50%;
+}
+
+.management-tab li a {
+  display: flex;
+  height: 67px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.management-tab li.on a {
+  background: var(--main-color);
+  color: var(--black-light);
+}
+
+.management-con {
+  margin-top: 60px;
+}
+
+.management-con table {
+  border-top: 2px solid #222;
+}
+
+.management-con table thead th {
+  border-bottom: 1px solid var(--line-color);
+  height: 59px;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.management-con table tbody td {
+  border-bottom: 1px solid var(--line-color);
+  height: 52px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.management-con table tbody td:nth-child(1) {
+  width: 10%;
+}
+
+.management-con table tbody td:nth-child(2) {
+  text-align: left;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border: 1px solid var(--black-light);
+  font-size: 14px;
+}
+
+.btn-download::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: url(../images/ico-file-down.png) 50% no-repeat;
+  margin-left: 8px;
+}
+
+.search-wrap {
+  display: table;
+  margin: 40px auto 0;
+}
+
+.search-wrap .f-row {
+  display: flex;
+  height: 46px;
+}
+
+.search-wrap .f-row select {
+  width: 81px;
+  border: 1px solid var(--line-color);
+  background: #fbfbfb;
+  color: #333;
+}
+
+.search-wrap .f-row .search {
+  width: 380px;
+  margin-left: -1px;
+  border: 1px solid var(--line-color);
+  display: flex;
+  align-items: center;
+}
+
+
+.search-wrap .f-row input {
+  width: calc(100% - 40px);
+  height: 100%;
+  padding: 10px;
+  background: #fbfbfb;
+}
+
+.search-wrap .f-row .btn-search {
+  width: 40px;
+  height: 40px;
+  background: #fbfbfb url(../images/ico-search.png) 50% no-repeat;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 37px;
+}
+
+.pagination a {
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #000;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.pagination a.page {
+  background: 50% /70% no-repeat;
+}
+
+.pagination a.page.page-first {
+  background-image: url();
+}
+
+.pagination a.page.page-prev {
+  background-image: url();
+}
+
+.pagination a.page.page-next {
+  background-image: url();
+}
+
+.pagination a.page.page-last {
+  background-image: url();
+}
+
+
+/* 소비자 보호 포털 */
+.consumer-protection {
+  width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.consumer-protection h3 {
+  font-weight: 700;
+  font-size: 44px;
+  color: var(--black-light);
+}
+
+.consumer-protection>p {
+  font-size: 20px;
+  margin-top: 60px;
+}
+
+.consumer-protection ol {
+  text-align: left;
+  background: #fafafa;
+  padding: 98px 120px;
+  margin-top: 60px;
+
+  /* 1. 카운터 이름 지정 */
+  counter-reset: protection-list;
+}
+
+.consumer-protection ol li {
+  display: flex;
+}
+
+.consumer-protection ol li:not(:first-child) {
+  margin-top: 30px;
+}
+
+.consumer-protection ol li::before {
+  /* 2. 카운터 값을 1씩 증가 */
+  counter-increment: protection-list;
+
+  /* 3. 카운터 값 표시 */
+  content: counter(protection-list);
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--black-light);
+  margin-top: -3px;
+  margin-right: 20px;
+}
+
+.consumer-protection ol li h4 {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.consumer-protection ol li p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-top: 10px;
+}

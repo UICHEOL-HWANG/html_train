@@ -1,0 +1,325 @@
+@charset 'utf-8';
+
+/* root */
+:root {
+    --main-color: #ffdf00;
+    --title-color: #000;
+    --text-color: #666;
+    --line-color: #e9e9e9;
+    --gray-dark: #1e1e1e;
+    --gray-light: #666;
+    --black: #000;
+    --black-light: #1e1e1e;
+    --white: #fff;
+}
+
+/* css reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+select,
+input,
+button,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar:hover {}
+
+::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    width: 20px;
+    background-color: blue;
+}
+
+::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+body {
+    font: 1rem/1 'Noto Sans KR', sans-serif;
+    color: var(--text-color);
+    word-break: keep-all;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* common */
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden {
+    position: absolute;
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 32px;
+    border-radius: 60px;
+    background: var(--main-color);
+    color: var(--black);
+    font-size: 19px;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    color: var(--black);
+    background: #ffeb5e;
+}
+
+.inner {
+    width: 1124px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* header */
+.header {
+    height: 72px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header nav {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: block;
+    width: 215px;
+    height: 26px;
+    background: url(../images/bi.png) 0 0 no-repeat;
+}
+
+.gnb {
+    display: flex;
+}
+
+.gnb li a {
+    display: block;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--black);
+    padding: 10px 27px;
+}
+
+.footer {
+    padding: 46px 0;
+    background: var(--gray-dark);
+    color: var(--gray-light);
+    font-size: 14px;
+}
+
+.links {
+    display: flex;
+}
+
+.links li a {
+    display: block;
+    padding: 0 16px;
+    position: relative;
+}
+
+.links li a strong {
+    font-weight: 700;
+}
+
+.links li a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 12px;
+    background: var(--gray-light);
+}
+
+.links li:first-child {
+    margin-left: -16px;
+}
+
+.links li:last-child a::after {
+    display: none;
+}
+
+.foot-con {
+    margin-top: 112px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.company-info dl {
+    margin-top: 22px;
+    line-height: 1.4;
+}
+
+.company-info dl dt {
+    font-weight: 700;
+}
+
+.foot-logo {
+    display: block;
+    width: 158px;
+    height: 18px;
+    background: url(../images/bi-footer.png) 0 0 no-repeat;
+}

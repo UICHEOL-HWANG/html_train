@@ -1,0 +1,48 @@
+/* css 디자인 초기화 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+* {
+  margin: 0; /* m0 약어 */
+  padding: 0; /* m0+p0 형제로 같이 구분 가능 */
+}
+
+ul,
+ol,
+li {
+  list-style: none; /* lisn 약어 */
+}
+
+strong {
+  color: #4181c3;
+  font-weight: 50px;
+  font-size: 20px;
+}
+
+h1 {
+  font-weight: 500px;
+  font-size: 40px; /* fz40 */
+}
+
+dt {
+  font-weight: 400;
+  font-size: 32px;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+article {
+  width: 1200px;
+  background-color: yellow;
+  margin: 0 auto; /* 가운데로 가라는 명령어 */
+}
+
+h2 {
+  font-weight: 400px;
+  font-size: 32px;
+}
+
+dd {
+  font-size: 15px;
+  color: #666;
+}

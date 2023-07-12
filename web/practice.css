@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 모든 태그 적용  */
+
+body{
+    background-color: darkslateblue;
+
+}
+
+.wrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+} 
+/* transform 까지의 조건은 항상 수평과 중앙을 유지시키는 소스 */
+
+.material-icons{
+    font-size : 10rem;
+
+} 
+/* 아이콘 사이즈 증가 */
+
+.lg-text{
+    font-size : 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    /* 글자간격을 떨어트림 */
+}
+
+.sm-text{
+    font-size : 2rem;
+}
+
+#dynamic{
+    position: relative;
+    display: inline-block;
+    /* 글자가 지워지는만큼 커서가 이동 */
+}
+
+#dynamic::after{
+    content: "";
+    display: block;
+    position : absolute;
+    top: 0;
+    right: -10px;
+    width: 4px;
+    height: 100%;
+    background-color: white;
+}
+/* 가상 커서를 만듦  */
+
+#dynamic.active::after{
+    display: none;
+}
+/* active라는 클래스가 생기면 커서가 사라지게 함  */
