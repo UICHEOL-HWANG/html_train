@@ -12,6 +12,14 @@ li {
   list-style: none; /* lisn 약어 */
 }
 
+figure {
+  border: 1px solid #000;
+}
+/* 이미지 밑에 불필요한 공간을 지워준다 */
+img {
+  vertical-align: top; /* vat 약어 */
+}
+
 body {
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -66,4 +74,5 @@ a {
 ul {
   display: flex;
   margin-top: 60px;
+  justify-content: space-between;
 }
