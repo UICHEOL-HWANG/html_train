@@ -1,0 +1,76 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1; /* lh1 */
+  letter-spacing: -1px; /* 글자간 간격 조정 */
+}
+
+/* 초기화 */
+
+a {
+  text-decoration: none; /* a태그 라인 초기화 */
+  color: #666;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #133984;
+}
+
+.management {
+  width: 1200px;
+  min-height: 384px;
+  margin: 0 auto;
+  background-color: #ff55;
+}
+.management h1 {
+  display: none; /* h1 사회책임경영 날려버리기 */
+}
+
+.management-list {
+  background: #5f5;
+  display: flex;
+  /* flex-direction: column; 세로방향으로 축을 바꿈 */
+  justify-content: flex-start; /* jc: 메인축 방향 정렬 */
+  justify-content: flex-end;
+  justify-content: center;
+  justify-content: space-between;
+  /* ai 교차축 방향 정렬 */
+  /* align-items: center; */
+}
+
+.management-list li {
+  width: 288px;
+  height: 384px;
+  background: #fff;
+}
+
+.management-list li dl {
+  padding: 29px 55px;
+  text-align: center;
+} /* 부모에게서 간격을 주는게 제일 좋다  */
+
+.management-list li dl dt {
+  /* fwb+fz20+c#133984 약어 */
+  font-weight: bold;
+  font-size: 20;
+  color: #133984;
+}
+.management-list li dl dd {
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 20px;
+}

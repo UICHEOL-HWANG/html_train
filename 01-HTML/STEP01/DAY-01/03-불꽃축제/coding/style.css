@@ -1,0 +1,78 @@
+@charset 'utf-8';
+
+/* 기본 디자인 초기화 */
+* {
+  /* m0+p0 */
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+/* 리스트 초기화 */
+
+img {
+  vertical-align: top;
+}
+/* 미세한 틈 공간 없애기 */
+
+/* 줄간격 없애기 */
+body {
+  line-height: 1.5; /* lh1 */
+}
+/* viewport 영역 전체  줄 간격을 1 숫자로 응용*/
+
+/* 기본디자인 모두 초기화 */
+
+.box1 {
+  width: 396px;
+  height: 396px;
+  background-color: #63bd9a; /* bgc */
+  color: #fff;
+  padding: 60px; /* p60 */
+  box-sizing: border-box;
+  font-family: Pretendard;
+  text-align: left;
+}
+
+.box1 strong {
+  display: block; /* 줄바꿈 */
+  margin-top: 35px;
+}
+
+.box1 h1 {
+  display: block;
+  margin-top: 20px;
+}
+
+.box1 p {
+  margin-top: 30px;
+}
+
+.box2 {
+  width: 396px;
+  height: 396px;
+  background-color: #e67788;
+  padding: 60px;
+  box-sizing: border-box;
+  font-family: Pretendard;
+  text-align: right;
+  color: white;
+}
+
+.box2 strong {
+  display: block;
+  margin-top: 35px;
+}
+
+.box2 h1 {
+  display: block;
+  margin-top: 20px;
+}
+
+.box2 p {
+  margin-top: 60px;
+}

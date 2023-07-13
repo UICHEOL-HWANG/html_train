@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1.5; /* lh1 */
+  font-family: Pretendard;
+  letter-spacing: -1px;
+}
+
+.k-car1 {
+  width: 1085px;
+  height: 578px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.k-car1 .font {
+  padding: 50px;
+}
+
+.k-car1 ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.k-car1 ul li {
+  width: 301px;
+  height: 578px;
+}
+
+.k-car2 {
+  width: 1131px;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.k-car2 ol {
+  display: flex;
+  justify-content: space-between;
+}
+
+.k-car2 ol li {
+  width: 342px;
+  height: 354px;
+  border: 1px solid white;
+  background: #7f7f7f;
+  padding: 50px 20px;
+}
+
+.k-car2 ol li dl {
+  margin-top: 72px;
+}

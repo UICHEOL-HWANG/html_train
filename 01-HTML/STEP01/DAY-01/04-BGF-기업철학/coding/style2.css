@@ -1,0 +1,54 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1; /* lh1 */
+  margin: 0 auto;
+}
+
+/* 초기화 */
+
+.ceo {
+  width: 1280px;
+  margin: 0 auto;
+  background-color: yellow;
+}
+
+.ceo h1 {
+  background-color: blue;
+  text-align: center;
+  padding: 60px;
+}
+
+.con-wrap {
+  background: orange;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
+
+.text-wrap {
+  background: green;
+  width: 852px;
+}
+
+.text-wrap p {
+  margin-top: 35px;
+}
+
+.text-wrap > trong {
+  margin-top: 50px;
+  display: block;
+}

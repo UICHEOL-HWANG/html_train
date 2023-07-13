@@ -1,0 +1,49 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1; /* lh1 */
+  font-family: Pretendard;
+}
+
+/* 초기화 */
+
+.ceo {
+  width: 1280px;
+  margin: 0 auto; /* 가운데로 보내는 명령어 */
+}
+
+.ceo h1 {
+  padding: 60px;
+  border-bottom: 1px solid #eeeeee;
+  text-align: center; /* tac */
+}
+.con-wrap {
+  display: flex;
+  justify-content: space-around; /* flex와 짝꿍 / 양쪽정렬 */
+  margin-top: 80px;
+}
+
+.text-wrap {
+  width: 852px;
+}
+
+.text-wrap p {
+  margin-top: 35px;
+}
+
+.text-wrap > strong {
+  margin-top: 50px;
+  display: block;
+}

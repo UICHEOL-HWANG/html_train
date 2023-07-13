@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1.5; /* lh1 */
+  font-family: Pretendard;
+  letter-spacing: -1px;
+}
+
+/* 초기화 */
+
+.k-car1 {
+  width: 1085px;
+  margin: 0 auto;
+  background: green;
+  text-align: center; /* 블록이 감싼 인라인 요소를 가운데로 보냄 */
+}
+
+.k-car1 ul {
+  background: blue;
+  display: flex;
+  justify-content: space-between; /* 균등분배 */
+}
+
+.k-car1 ul li {
+  border: 1px solid #000;
+  width: 301px;
+}
+
+.k-car2 {
+  width: 1131px;
+  margin: 70px auto;
+  background: yellow;
+  text-align: center;
+}
+
+.k-car2 ol {
+  background: green;
+  display: flex;
+  justify-content: space-between;
+}
+
+.k-car2 ol li {
+  border: 1px solid #000;
+  width: 342px;
+  height: 354px;
+  background: white;
+  border-radius: 50%; /* bdrs50p */
+  border-radius: 30px; /* bdrs30 */
+  padding: 50px 20px; /* 안쪽 여백 생성 */
+}

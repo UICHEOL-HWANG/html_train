@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1; /* lh1 */
+  margin: 0 auto;
+  font-family: Pretendard;
+}
+
+.box ul {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.box1 ul li {
+  width: 301px;
+  height: 578px;
+}
+
+.box ul li dl {
+  text-align: center;
+  margin: 10px;
+  background-color: blue;
+}
+
+.font-wrap {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.font-wrap2 p {
+  margin-top: 10px;
+  background-color: red;
+}
+
+.font-wrap > p {
+  margin-top: 20px;
+}
+
+.box2 ul li {
+  width: 342px;
+  height: 354px;
+  text-align: center;
+}
+
+.box2 ul li figure {
+  text-align: center;
+}
+
+.box2 ul li dl dd {
+  margin-top: 20px;
+}
+
+.box2 ul li p {
+  color: red;
+  font-weight: bold;
+}
