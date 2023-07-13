@@ -351,3 +351,41 @@ min-hegiht : 최소한 넓어지게 만듦
 3. position : absolute → 요소를 겹쳐 놓고 싶을 때, 혹은 원하는 곳 어디나 놓고 싶을 때
 
 - CSS X축 Y축을 동시에 표시하는 경우 : 항상 X가 먼저 언급된다.
+
+---
+
+### 참고사항
+
+```css
+h1,
+p {
+  width: 200px;
+  height: 200px;
+  background: #f00;
+  display: inline;
+}
+strong,
+em,
+a {
+  width: 200px;
+  height: 200px;
+  background: #00f;
+  display: block;
+}
+/* 블록인 h1,p가 인라인으로 바뀌고 , 
+인라인인 strong/em/a가 블록으로 변경 */
+```
+
+> - margin : 블록요소의 간격 시계 방향 위 오른 아래 좌 이런식으로 움직
+> - padding : 시계방향 적용 블록요소 안쪽의 간격을 조정
+> - 바깥족 여백 ↔ 안쪽 여백 (마진 ↔ 패딩)
+
+> box-sizing: border-box;
+
+> - 기존에 정해놓은 사이즈로 고정하기 위한 옵션
+
+> section / article
+
+> - 영역 / 구분선
+> - 제목을 달고다닌다
+> - 정보 덩어리들을 의미시킴
