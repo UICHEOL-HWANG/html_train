@@ -310,3 +310,7 @@ position absolute relative
 margin 0 auto; <-> 가운데 정렬
 min-hegiht : 최소한 넓어지게 만듦
 ```
+
+---
+
+## DAY3
