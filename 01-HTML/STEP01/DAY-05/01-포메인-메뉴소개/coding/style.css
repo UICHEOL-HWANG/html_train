@@ -1,0 +1,64 @@
+:root {
+  --main-color: #546220;
+  --main-text-color: #222222;
+  --sub-text-color: #b5aa9b;
+}
+
+::selection {
+  background: var(--main-color);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.menu {
+  width: 1078px;
+  margin: 0 auto;
+}
+
+.menu h1 {
+  display: none;
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 29px;
+}
+
+.menu-list li {
+  /* border: 1px solid #000; */
+  background: #fff;
+  text-align: center;
+  width: 340px;
+  height: 410px;
+  position: relative;
+}
+
+.menu-list li dl {
+  font-size: 17px;
+  padding-top: 20px;
+}
+
+.menu-list li dl dt {
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--main-text-color);
+}
+.menu-list li dl dd {
+  margin-top: 9px;
+  color: var(--sub-text-color);
+}
+
+.badge {
+  position: absolute;
+  left: 21px;
+  top: 20px;
+}

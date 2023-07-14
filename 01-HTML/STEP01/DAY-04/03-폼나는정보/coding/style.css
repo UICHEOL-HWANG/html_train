@@ -15,32 +15,72 @@ img {
 }
 body {
   line-height: 1.5; /* lh1 */
-  font-family: Pretendard;
   letter-spacing: -1px;
+  background: #f5f5f5;
+  font-family: "Malgun Gothic";
 }
-
 /* 초기화 */
 
 .info {
-  width: 1276px;
-  height: 342px;
+  width: 1180px;
   margin: 0 auto;
-  text-align: center;
+  padding: 44px 0 36px; /* h1간의 간격을 위해서 section 부모에게서 넣는게 유리하다 */
 }
 
 .info h1 {
+  font-size: 34px;
+  color: #ea002c;
   text-align: center;
-  padding: 60px;
-}
-.info ul {
-  padding: 118px 50px 36px;
-  display: flex;
-  justify-content: space-between;
 }
 
-.info ul li {
-  width: 280px;
-  height: 185px;
-  text-align: center;
-  padding: 50px;
+.info .info-list {
+  display: flex; /* df */
+  justify-content: space-between; /* jcsb */
+  margin-top: 43px; /* ul과 h1을 띄우기 위해 사용 */
 }
+
+.info .info-list li {
+  width: 280px;
+  min-height: 185px;
+  border: 1px solid #000;
+  background: #fff;
+
+  transition-property: transform; /* trsp */
+  transition-duration: 1s; /* trsd */
+  transition-timing-function: ease-in; /* trst */ /* r가속과 감속을 주겠다. */
+  transition-delay: 1s; /* trsdl */ /* 1초를 기다렸다가 구현 */
+  /* 한줄 요약  */
+}
+
+.info .info-list li dl dt {
+  background: #434159;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.info .info-list li dl dd {
+  padding: 20px;
+}
+
+.info .info-list li:hover {
+  transform: translateY(-30px); /* 마우스가 닿으면 변화  */
+  background: orange;
+}
+
+.info .info-list li:hover dl dt {
+  background: #ea002c;
+}
+
+/* 가상요소 */
+
+.info .info-list li dl::before {
+  content: ""; /* ct */
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #434159;
+}
+
+/* .info .info-list li dl::after {
+  content: "마지막";
+} */

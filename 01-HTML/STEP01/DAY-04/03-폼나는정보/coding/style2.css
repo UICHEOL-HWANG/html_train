@@ -1,0 +1,58 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1.5; /* lh1 */
+  font-family: Pretendard;
+  letter-spacing: -1px;
+  background: #f7f7f7;
+}
+/* 초기화 */
+
+.info {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 44px 0 36px;
+}
+
+.info .info-list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 43px;
+}
+
+.info h1 {
+  text-align: center;
+}
+
+.info-list li {
+  width: 280px;
+  min-width: none;
+  height: 185px;
+}
+
+.info-list li dl dd {
+  padding: 20px;
+}
+
+.info-list li dl dt {
+  background: #434159;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.info-list li:hover dl dt {
+  background: #ea002c;
+}

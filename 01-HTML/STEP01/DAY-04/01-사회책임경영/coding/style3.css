@@ -14,41 +14,30 @@ img {
   vertical-align: top; /* vat */
 }
 body {
-  line-height: 1; /* lh1 */
+  line-height: 1.5; /* lh1 */
   letter-spacing: -1px; /* 글자간 간격 조정 */
 }
 
 /* 초기화 */
 
-a {
-  text-decoration: none; /* a태그 라인 초기화 */
-  color: #666;
-}
-
-a:hover {
-  text-decoration: none;
-  color: #133984;
-}
-
 .management {
   width: 1200px;
-  min-height: 384px;
   margin: 0 auto;
   background: #f4f4f4;
 }
-.management h1 {
-  display: none; /* h1 사회책임경영 날려버리기 */
+
+.management a {
+  text-decoration: none;
+  color: #666;
 }
 
-.management-list {
+.management h1 {
+  display: none;
+}
+
+.management .management-list {
   display: flex;
-  /* flex-direction: column; 세로방향으로 축을 바꿈 */
-  justify-content: flex-start; /* jc: 메인축 방향 정렬 */
-  justify-content: flex-end;
-  justify-content: center;
   justify-content: space-between;
-  /* ai 교차축 방향 정렬 */
-  /* align-items: center; */
 }
 
 .management-list li {
@@ -58,9 +47,9 @@ a:hover {
 }
 
 .management-list li dl {
-  padding: 29px 40px;
+  padding: 20px 49px;
   text-align: center;
-} /* 부모에게서 간격을 주는게 제일 좋다  */
+}
 
 .management-list li dl dt {
   /* fwb+fz20+c#133984 약어 */
@@ -68,10 +57,11 @@ a:hover {
   font-size: 20;
   color: #133984;
 }
-.management-list li dl dd {
+
+.management-list li dd {
   font-size: 14px;
+  margin-top: 10px;
   line-height: 24px;
-  margin-top: 20px;
 }
 
 .management-list li a::after {
@@ -83,9 +73,9 @@ a:hover {
   margin: 0 auto; /* 블록 가운데 정렬 */
 }
 
-/* hover 효과 */
 .management-list li:hover {
-  background: #004a8d;
+  background: #133984;
+  transition: 0.4s;
 }
 
 .management-list li:hover dt,
@@ -96,17 +86,4 @@ a:hover {
 .management-list li:hover a::after {
   background: url(images/arr-on.jpg) 0 0 no-repeat;
   transform: translatex(20px);
-  transition: 0.4s 1s;
-}
-
-.management-list li a figure {
-  overflow: hidden; /* oh : 영역을 넘어가면 숨겨라 */
-}
-
-.management-list li a figure img {
-  transition: 0.4s;
-}
-
-.management-list li:hover a figure img {
-  transform: scale(1.3) rotate(20deg); /* trf 명령어 */
 }

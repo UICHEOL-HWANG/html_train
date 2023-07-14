@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS position(absolute)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .wrap {
+        /* w700+h400+bg#ff5+m0-a */
+        width: 700px;
+        height: 400px;
+        background: #ff5;
+        margin: 0 auto;
+        position: relative; /* 절대배치  */
+      }
+
+      .wrap .box1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+
+        /* posa + 좌표값 --> 뷰포트 기준  */
+        position: absolute;
+        left: 100px;
+        top: 200px;
+        z-index: 1; /* z1 */
+      }
+      .wrap .box2 {
+        width: 150px;
+        height: 150px;
+        background: blue;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+      }
+      .spacer {
+        border: 10px solid #000;
+        height: 2000px;
+      }
+
+      .wrap .box3 {
+        width: 80px;
+        height: 80px;
+        background: green;
+
+        /* posa + 좌표값 --> 뷰포트 기준  */
+        position: absolute;
+        left: 100px;
+        top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+    </div>
+    <div class="spacer"></div>
+  </body>
+</html>
