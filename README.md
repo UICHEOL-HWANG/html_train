@@ -389,3 +389,85 @@ a {
 > - 영역 / 구분선
 > - 제목을 달고다닌다
 > - 정보 덩어리들을 의미시킴
+
+---
+
+## DAY4
+
+### -CSS 2차시
+
+- header
+- 덩어리 div / section
+- footer
+
+가상 클래스 : hover , active ,link 등
+
+가상 요소 :: → before / after → content: '';를 넣어줘야 구동된다
+
+:hover 마우스가 요소에 닿으면 액션이 취해지는 가상 클래스 구현
+::after / before 요소 앞 / 요소 뒤에서 가상 클래스가 구현
+
+- hover : 가상 클래스 해당 요소가 마우스에 닿으면 액션이 취해짐
+- trasnform : translateY() : 움직이게 하는 액션
+
+- transition
+
+```CSS
+  transition-property: transform; /* trsp */
+  transition-duration: 1s; /* trsd */
+  transition-timing-function: ease-in; /* trst */ /* r가속과 감속을 주겠다. */
+  transition-delay: 1s; /* trsdl */ /* 1초를 기다렸다가 구현 */
+```
+
+transtion-property 속성명 전환 효과를 줄 CSS 속성명을 지정 → all을 지정하면 전체 속성 사용 가능
+
+transtion-duration 지속 시간 ( 초단위 ) 효과가 발생할 때 지속할 시간을 나타냄 초단위
+
+transition-delay 지연 시간 ( 초단위 ) 전환 효과가 발생 할 때 지연할 시간을 나타냄 초단위
+
+transtion-timing-function 가속도 전환효과의 가속도를 나타냄 linear,ease,ease-in/out 등
+
+transtion 속성명 / 전환 시간 / 가속도 / 지연 시간 모든 전환 효과 관련 속성값을 한꺼번에 축약해서 사용
+
+- trasnform → filter : grayscale();
+  - 해당 요소는 흑백으로 변환
+- blur
+  - 모자이크 요소
+
+# 🚨 absolute ↔ relative
+
+- 절대배치
+- 부모 relative ↔ 자식 absolute
+- CSS X축 Y축을 동시에 표시하는 경우 : 항상 X가 먼저 언급된다.
+- posa 단축키 좌표값과 함께 사용
+- 좌표값 → left , right , top ,bottom
+- 직계 조상에게 posr,posa,posf → posa의 기준점이 된다
+- 직계 조상에게 위 세 배치명령 posr,posa,posf 이 없으면 viewport(전체화면) 영역이 기준이된다.
+- posf : 무조건 viewport 기준으로 나타남 (fixed)
+- position fixed : 스크롤과 무관하게 배치
+- 절대배치 된 요소끼리 겹쳤을 때 보이는 우선 순위 결정 : z-index → 숫자가 높으면 먼저 보여지게 된다.
+
+---
+
+> 복습
+
+- diplay:flex → 요소를 가로(혹은 세로)로 배치 하고 싶을 때
+
+  - 배치시킬 요소의 부모에게 주는 명령
+  - 배치될 요소를 flex에 item이라 부른다. (flex item)
+  - 배치 시키는 부모 요소를 flex의 컨테이너라고 부른다. (flex container)
+
+  - flex 실행시 : 부모 요소가 flex container가 되면 축이 생긴다
+  - 메인축이라고 부름
+  - 메인축의 기본 방향을 가로(row) ← flex item은 그 메인축을 기준으로 배치가 됨
+  - 항상 메인축과 반대되는 축도 생겨난다, 그 축을 교차축이라고 한다.
+  - 메인 축 방향의 정렬 : justify-content
+  - 교차 축 방향의 정렬 : align-item
+
+- position : absolute → 요소를 겹쳐 놓고 싶을 때, 혹은 원하는 곳 어디나 놓고 싶을 때
+
+- CSS X축 Y축을 동시에 표시하는 경우 : 항상 X가 먼저 언급된다.
+- posa 단축키 좌표값과 함께 사용
+- 좌표값 → left , right , top ,bottom
+- 직계 조상에게 posr,posa,posf → posa의 기준점이 된다
+- 직계 조상에게 위 세 배치명령 posr,posa,posf 이 없으면 viewport(전체화면) 영역이 기준이된다.
