@@ -1,0 +1,130 @@
+@charset 'utf-8';
+
+/* visual */
+
+.visual {
+  max-width: 1920px; /* max 최대 이하 min 최소 이상  */
+  height: 646px;
+  margin: 0 auto;
+  background: #000;
+}
+
+/* intro  */
+.intro {
+  text-align: center;
+  padding: 120px 0 140px;
+}
+
+.intro h3 {
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--title-color);
+}
+
+.intro p {
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 24px;
+  padding: 0 295px;
+}
+
+.intro .intro-list {
+  background: var(--bg--light);
+  display: flex;
+  margin-top: 97px;
+  padding: 80px 114px;
+  justify-content: space-between;
+}
+
+.intro-list li {
+  /* border: 1px solid #000; */
+  /* width: 33.333%; */
+  width: 300px;
+}
+
+.intro .intro-list li dl dt {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--main-color);
+  margin-top: 24px;
+}
+
+.intro .intro-list li dl dd {
+  padding: 0 35px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 24px;
+}
+
+/* 가상요소 */
+
+.intro .intro-list li dl::before {
+  content: "\EFFA";
+  /* display: inline-block; */
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background: var(--main-color);
+  font-family: remixicon;
+  font-size: 50px;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro .intro-list li:nth-of-type(1) dl::before {
+  content: "\EFC3";
+  width: 106px;
+  height: 106px;
+}
+
+.intro .intro-list li:nth-of-type(2) dl::before {
+  content: "\EEAB";
+  width: 106px;
+  height: 106px;
+}
+
+.intro .intro-list li:nth-of-type(3) dl::before {
+  content: "\EF25";
+  width: 106px;
+  height: 106px;
+}
+
+/* link */
+.link-list {
+  background: green;
+  display: flex;
+}
+
+.link-list li {
+  /* border: 1px solid #000; */
+  width: 50%;
+  height: 395px;
+  padding: 84px 100px;
+  background: 0 0 / cover no-repeat; /* 가로세로 비율을 유지하면서 꽉 채운다 */
+}
+
+.link-list li:first-child {
+  background-image: url(https://i.ytimg.com/vi/a_fggNL-WBY/maxresdefault.jpg);
+}
+
+.link-list li:last-child {
+  background-image: url(https://file2.nocutnews.co.kr/newsroom/image/2022/10/12/202210121901356269_0.jpg);
+}
+
+.link-title h4 {
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 1;
+  color: #fff;
+  /* background: #5f5; */
+  width: 260px;
+}
+
+.link-title p {
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  margin-top: 21px;
+}

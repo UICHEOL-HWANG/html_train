@@ -1,0 +1,81 @@
+@charset 'utf-8';
+:root {
+  --main-color: #776966;
+  --main-color-dark: #6b5f5f;
+  --title-color: #666;
+  --bg-color: #edf1f2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1.5; /* lh1 */
+  letter-spacing: -1px;
+  color: var(--main-color-dar);
+  font-family: "Nanum Gothic", sans-serif;
+  background: var(--bg-color);
+}
+/* 초기화 */
+
+.sponsor {
+  width: 916px;
+  margin: 0 auto;
+}
+
+.sponsor h1 {
+  display: none;
+}
+
+.sponsor-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sponsor-list li {
+  width: 295px;
+  height: 433px;
+}
+
+.sponsor-list li dl {
+  padding: 20px 23px;
+}
+
+.sponsor-list li dl dt {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--title-color);
+}
+
+.sponsor-list li dl dd {
+  margin-top: 16px;
+  line-height: 1.3;
+}
+
+/* 퍼온 이미지 맞춤 */
+
+.sponsor-list li figure {
+  overflow: hidden;
+  height: 237px;
+}
+
+.sponsor-list li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* 액션 */
+.sponsor-list li:hover {
+  transform: scale(1.3);
+}

@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol,
+li {
+  list-style: none; /* lisn */
+}
+img {
+  vertical-align: top; /* vat */
+}
+body {
+  line-height: 1.5; /* lh1 */
+  font-family: Pretendard;
+  letter-spacing: -1px;
+}
+
+:root {
+  --sub-text-color: #6b6767;
+}
+/* 초기화 */
+
+.purchase {
+  width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px;
+}
+
+.purchase-list {
+  display: flex;
+}
+.purchase-list li {
+  width: 540px;
+  height: 640px;
+}
+
+.purchase-list li dl {
+  padding: 20px;
+}
+
+.purchase-list li dl dt {
+  font-size: 31px;
+  font-weight: bold;
+}
+
+.purchase-list li dl dd {
+  margin-top: 10px;
+  color: var(--sub-text-color);
+}
+
+.purchase .purchase-list li dl dd:nth-of-type(2) {
+  font-size: 31px;
+  font-weight: bold;
+  color: #000;
+}
+
+.proceed {
+  width: 1080px;
+}

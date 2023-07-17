@@ -62,3 +62,79 @@ a:hover {
   left: 21px;
   top: 20px;
 }
+
+/* 마우스 액션 화면창 만들기 */
+
+.menu-info {
+  background: rgba(99, 148, 75, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 340px;
+  padding: 80px 20px 55px;
+  text-align: center;
+  opacity: 0; /* 여태 만든 메뉴 내용 지우기 */
+  transition: 0.4s;
+}
+
+.menu-list li .menu-info dt {
+  font-weight: bold;
+  font-size: 23px;
+  color: #fff;
+}
+.menu-info dd {
+  font-size: 16px;
+  color: #e4b662 !important;
+}
+
+.menu-info dd + dd {
+  color: #fff !important;
+  margin-top: 30px !important;
+} /* 같은 부모 안에 있는 형제 요소 중 가장 인접한 요소에게 적용 */
+
+.menu-info dd:last-child a {
+  /* 더보기 요소 작업 */
+
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  position: relative;
+
+  /* 텍스트 숨기기 */
+  text-indent: -9999px;
+}
+
+/* 더하기 박스 */
+.menu-info dd:last-child a::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: rotate(90deg);
+  transition: 0.4s 0.5s;
+}
+
+.menu-info dd:last-child a::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+}
+
+/* 마우스 호버 액션 */
+.menu-list li:hover .menu-info {
+  opacity: 1; /* 지워진 메뉴가 마우스가 올라오면 보여지게  함 */
+}
+
+.menu-list li:hover .menu-info dd:last-child a::before {
+  transform: rotate(0deg);
+}
