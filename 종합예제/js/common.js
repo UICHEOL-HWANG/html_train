@@ -20,3 +20,6 @@ window.addEventListener("scroll", function () {
 }); /* 창에 스크롤이 생겼을 때  */
 
 // 동작을 생각해보기
+
+// AOS  초기화
+AOS.init();

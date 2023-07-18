@@ -22,6 +22,7 @@ body {
   font: 1rem/1.5 "Pretendard", sans-serif;
   letter-spacing: -1px;
   color: var(--text-color);
+  word-break: keep-all; /* 단어들을 어절단위로 떨어트린다. */
 }
 
 ::selection {
@@ -57,6 +58,7 @@ a:hover {
 
 .inner {
   width: 1344px;
+  height: 100%;
   margin: 0 auto;
 }
 
@@ -86,9 +88,12 @@ a:hover {
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--main-color);
+
   display: flex;
   justify-content: center;
   align-items: center;
+  /* 아이콘 가운데로 넘겨버리기  */
+
   font-size: 20px;
   color: var(--main-color);
 }

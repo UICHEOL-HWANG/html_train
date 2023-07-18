@@ -37,6 +37,7 @@ body {
 .purchase-list li {
   width: 540px;
   height: 640px;
+  position: relative;
 }
 
 .purchase-list li dl {
@@ -61,4 +62,24 @@ body {
 
 .proceed {
   width: 1080px;
+}
+
+.sub-info {
+  background: rgba(99, 148, 75, 0.8);
+  position: absolute;
+  width: 100%;
+  height: 382px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  padding: 80px 20px 55px;
+}
+
+.sub-info .sub dt,
+.sub-info .sub dd {
+  color: #fff !important;
+}
+
+.purchase-list li:hover .sub-info {
+  opacity: 1;
 }

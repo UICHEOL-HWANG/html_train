@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>welcome to imaginary</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/main.css" />
@@ -11,6 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
   </head>
   <body>
     <a href="#main" class="hidden">본문 바로가기</a>
@@ -18,16 +20,18 @@
       <div class="inner">
         <nav>
           <h1 class="logo">
-            <a href="#"><img src="img/logo.png" alt="imaginary" /></a>
+            <a href="./index.html"
+              ><img src="img/logo.png" alt="imaginary"
+            /></a>
           </h1>
           <ul class="gnb">
-            <li><a href="">company</a></li>
-            <li><a href="">franchise</a></li>
-            <li><a href="">notice</a></li>
-            <li><a href="">financial</a></li>
+            <li><a href="./company.html">company</a></li>
+            <li><a href="./franchise.html">franchise</a></li>
+            <li><a href="./notice.html">notice</a></li>
+            <li><a href="./financial.html">financial</a></li>
           </ul>
           <div class="util-menu">
-            <a href="" class="btn-login">
+            <a href="./login.html" class="btn-login">
               <i class="ri-user-line"></i>
               <i class="hidden">로그인</i>
             </a>
@@ -36,10 +40,11 @@
       </div>
     </header>
     <hr />
+
     <main id="main">
       <section class="visual"></section>
       <section class="intro">
-        <div class="inner">
+        <div data-aos="fade-up" data-aos-offset="500" class="inner">
           <h3>We specialize in creative operations.</h3>
           <p>
             We act as an extended member of your creative, marketing and
@@ -69,10 +74,10 @@
         </div>
       </section>
       <section class="links">
-        <ul class="link-list">
+        <ul data-aos="fade-up" data-aos-offset="500" class="link-list">
           <li>
             <a href="#">
-              <div class="link-title">
+              <div data-aos="flip-up" data-aos-offset="500" class="link-title">
                 <h4>web online events</h4>
                 <p>웹 버전의 온라인 행사부터.</p>
               </div>
@@ -80,7 +85,7 @@
           </li>
           <li>
             <a href="#">
-              <div class="link-title">
+              <div data-aos="flip-up" data-aos-offset="500" class="link-title">
                 <h4>metaverse online events</h4>
                 <p>최신 트렌드의 메타버스 온라인 행사까지.</p>
               </div>
@@ -114,6 +119,7 @@
       <i class="ri-arrow-up-line"></i>
       <i class="hidden"></i
     ></a>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/common.js"></script>
   </body>
 </html>

@@ -1,0 +1,236 @@
+@charset 'utf-8';
+
+.sub-visual {
+  height: 360px;
+  background: 0 0 / cover no-repeat fixed;
+}
+
+.company .sub-visual {
+  background-image: url(https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/Lkk/image/RhPxN-qvq1siVGGN1ge8mK656ZI.jpeg);
+}
+
+.franchise .sub-visual {
+  background-image: url(https://www.cashmerejournal.com/wp-content/uploads/2022/11/1-4.jpg);
+}
+
+.notice .sub-visual {
+  background-image: url(https://i.ytimg.com/vi/X6VrQZhr5hQ/maxresdefault.jpg);
+}
+
+.sub-title {
+  /* background: #ff0; */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.sub-title h2 {
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.sub-title h2::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 6px;
+  background: #fff;
+  animation: sliding 1s 0.7s both; /* 느즈막히 나타내는 명령어 both */
+}
+
+.sub-title h2 b {
+  margin-top: 15px;
+  display: block;
+  /* 2. 애니메이션을 적용한다 */
+  animation: sliding 1s;
+}
+
+.sub-visual + section {
+  padding: 120px 0 200px;
+}
+
+.sec-title {
+  font-weight: 700;
+  font-size: 50px;
+  color: #000;
+  text-align: center;
+}
+
+.greeting-con {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  /* background: yellow; */
+  align-items: flex-start;
+}
+
+.greeting-con figure {
+  border-radius: 50px 100px 150px 200px;
+  overflow: hidden;
+  /* border: 1px solid #000; */
+}
+.greeting-con .greeting-text {
+  /* border: 1px solid blue; */
+  width: 774px;
+}
+
+.greeting-con .greeting-text h4 {
+  font-weight: 800;
+  font-size: 60px;
+  color: var(--title-color);
+}
+.greeting-con .greeting-text h5 {
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--main-color);
+  margin-top: 32px;
+}
+.greeting-con .greeting-text p {
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 32px;
+}
+
+.greeting-con .greeting-text .ceo-sign {
+  margin-top: 30px;
+  display: block;
+  animation: sliding 1s 0.7s both;
+}
+
+/* CSS Animation */
+/* 1. 동작을 만든다 */
+@keyframes sliding {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); /* trftx */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* 3.  */
+
+/* process list */
+
+.process-list {
+  /* background: #5f5; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 72px;
+  margin-top: 80px;
+
+  /* 번호매기기 만들기 */
+  counter-reset: process-count;
+}
+
+.process-list li {
+  border-top: 3px solid #000; /* 가로 선만 보여짐 */
+  width: 400px;
+  height: 300px;
+  padding: 30px 0;
+
+  /* 번호매기기 요소 */
+  counter-increment: process-count;
+}
+
+.process-list li dl dt::before {
+  content: "0" counter(process-count) ". ";
+}
+
+.process-list li dt {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--main-color);
+}
+
+.process-list li dd {
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* 문의하기 버튼 만들기 */
+.btn-basic {
+  /* 박스버튼 디자인 */
+  display: inline-block;
+  padding: 12px 48px;
+  border-radius: 50px;
+
+  border: 1px solid #000;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn-wrap {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* 마우스가 문의하기 박스에 안에 있을 경우 박스 이벤트 */
+.btn-basic:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+/* 공지사항 */
+
+.tab-con img {
+  max-width: 100%;
+}
+
+.tab-con-list {
+  background: #f5f;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px 24px; /* 리스트들 사이에 가로 세로 좌표 차이값  */
+}
+
+.tab-con-list li {
+  border: 1px solid #000;
+  width: 432px;
+  height: 532px;
+  position: relative;
+}
+
+.tab-con-list li figure {
+  height: 290px;
+}
+
+.tab-con-list li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50%;
+}
+
+.badge-alarm {
+  width: 48px;
+  height: 48px;
+  background: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.badge-category {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #fff;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
