@@ -17,6 +17,10 @@
   background-image: url(https://i.ytimg.com/vi/X6VrQZhr5hQ/maxresdefault.jpg);
 }
 
+.financial .sub-visual {
+  background-image: url(https://www.jungle.co.kr/image/8cd5401640fdb0784031e852);
+}
+
 .sub-title {
   /* background: #ff0; */
   display: flex;
@@ -178,19 +182,46 @@
 
 /* 공지사항 */
 
+.tab-menu {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.search-form {
+  height: 100px;
+  background: #000;
+}
+
+.tab-menu a.on,
+.tab-menu a {
+  font-weight: 600;
+  font-size: 30px;
+  color: #828282;
+  border-bottom: 3px solid transparent; /* 메뉴 하단바 */
+}
+
+.tab-menu a:hover {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+.tab-wrap {
+  margin-top: 80px;
+}
+
 .tab-con img {
   max-width: 100%;
 }
 
 .tab-con-list {
-  background: #f5f;
   display: flex;
   flex-wrap: wrap;
   gap: 70px 24px; /* 리스트들 사이에 가로 세로 좌표 차이값  */
 }
 
 .tab-con-list li {
-  border: 1px solid #000;
   width: 432px;
   height: 532px;
   position: relative;
@@ -198,6 +229,8 @@
 
 .tab-con-list li figure {
   height: 290px;
+  position: relative;
+  overflow: hidden;
 }
 
 .tab-con-list li figure img {
@@ -205,6 +238,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 50%;
+  transition: var(--trs);
 }
 
 .badge-alarm {
@@ -220,6 +254,7 @@
   position: absolute;
   top: 24px;
   left: 24px;
+  z-index: 1;
 }
 
 .badge-category {
@@ -233,4 +268,129 @@
   position: absolute;
   top: 24px;
   right: 24px;
+  z-index: 1;
+}
+
+.tab-con-list li:hover .badge-alarm .ri-notification-3-fill {
+  -webkit-animation: bounce-bottom 0.9s both;
+  animation: wobble-hor-top 0.8s both;
+}
+
+.tab-con-list li figure::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.tab-con-list li:hover figure::after {
+  opacity: 0.7;
+}
+
+.con-box {
+  padding-top: 32px;
+}
+
+.con-box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--main-color);
+  min-height: 72px;
+}
+
+.con-box p {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 90px;
+  margin-top: 12px;
+}
+
+.con-box .date {
+  font-weight: 700;
+  display: block;
+  margin-top: 12px;
+}
+.tab-con-list li:hover img {
+  transform: scale(1.3);
+}
+
+.btn-wrap {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.financial-info-tbl {
+  background: white;
+  margin-top: 117px;
+}
+
+.financial-info-tbl p {
+  text-align: right;
+}
+
+/* 재무정보  */
+.financial-info-tbl table {
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  border-top: 3px solid #000;
+}
+
+.financial-info-tbl table th,
+.financial-info-tbl table td {
+  border-bottom: 1px solid var(--line-light);
+  height: 60px;
+  vertical-align: middle;
+  text-align: center;
+  background: #fff;
+  font-weight: 500;
+}
+
+.financial-info-tbl table th {
+  font-weight: 700;
+}
+
+.financial-info-tbl tbody tfoot tr td:first-child,
+.financial-info-tbl tbody tr td:first-child {
+  text-align: left;
+  padding-left: 32px;
+}
+
+.financial-info-tbl table tbody tr.sum td {
+  background: var(--bg-light);
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.financial-info-tbl table tfoot.sum tr td {
+  background: var(--bg-light);
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.financial-info-tbl table tfoot.sum tr td:first-child {
+  text-align: left;
+  padding-left: 32px;
+}
+
+.login .sub-title h2 {
+  color: #000;
+}
+
+.login .sub-title h2::before {
+  background: #000;
+}
+
+.sub-visual + section.login-wrap {
+  padding-top: 0;
 }

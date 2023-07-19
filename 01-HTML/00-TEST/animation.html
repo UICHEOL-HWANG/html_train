@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .rotate-scale-up {
+        -webkit-animation: rotate-scale-up 1s linear both;
+        animation: rotate-scale-up 1s linear both;
+      }
+      @-webkit-keyframes rotate-scale-up {
+        0% {
+          -webkit-transform: scale(1) rotateZ(0);
+          transform: scale(1) rotateZ(0);
+        }
+        50% {
+          -webkit-transform: scale(2) rotateZ(180deg);
+          transform: scale(2) rotateZ(180deg);
+        }
+        100% {
+          -webkit-transform: scale(1) rotateZ(360deg);
+          transform: scale(1) rotateZ(360deg);
+        }
+      }
+      @keyframes rotate-scale-up {
+        0% {
+          -webkit-transform: scale(1) rotateZ(0);
+          transform: scale(1) rotateZ(0);
+        }
+        50% {
+          -webkit-transform: scale(2) rotateZ(180deg);
+          transform: scale(2) rotateZ(180deg);
+        }
+        100% {
+          -webkit-transform: scale(1) rotateZ(360deg);
+          transform: scale(1) rotateZ(360deg);
+        }
+      }
+      .wrap {
+        width: 100vw;
+        height: 100vh;
+        background: #ff5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box {
+        width: 150px;
+        height: 200px;
+        background: blue;
+        animation: rotate-scale-up 1s linear both; /*  */
+        animation-iteration-count: infinite;
+      }
+
+      .box:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
