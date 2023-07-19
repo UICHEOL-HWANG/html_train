@@ -6,30 +6,46 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" />
-    <input type="password" />
-    <input type="radio" />
-    <input type="checkbox" />
-    <input type="file" />
-    <select name="" id="">
-      <option value="edge">익스플로러</option>
-      <option value="safari">크롬</option>
-      <option value="chrome">엣지</option>
-      <option value="oprea">오페라</option>
-      <option value="firefox">파이어폭스</option>
-    </select>
+    <form action="post">
+      <fieldset>
+        <legend>필수입력항목</legend>
 
-    <textarea
-      name=""
-      id=""
-      cols="30"
-      rows="10"
-      placeholder="의견을 남겨주세요"
-    ></textarea>
+        <label for="user_name">이름</label>
+        <input type="text" id="user_name" />
+        <input type="password" />
+        <input type="radio" />
 
-    <button type="submit">확인</button>
-    <button type="reset">취소</button>
-    <button type="button">메뉴</button>
-    <!-- 자바스크립트를 위한 기능버튼 -->
+        <div class="">
+          <input type="checkbox" id="yes" />
+          <label for="yes">동의합니다</label>
+        </div>
+
+        <input type="file" />
+        <select name="" id="">
+          <option value="edge">익스플로러</option>
+          <option value="safari">크롬</option>
+          <option value="chrome">엣지</option>
+          <option value="oprea">오페라</option>
+          <option value="firefox">파이어폭스</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>선택입력항목</legend>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="의견을 남겨주세요"
+        ></textarea>
+        <input type="color" />
+        <input type="date" />
+        <input type="range" />
+      </fieldset>
+      <button type="submit">확인</button>
+      <button type="reset">취소</button>
+      <button type="button">메뉴</button>
+      <!-- 자바스크립트를 위한 기능버튼 -->
+    </form>
   </body>
 </html>
