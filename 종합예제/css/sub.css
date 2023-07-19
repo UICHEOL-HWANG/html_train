@@ -479,3 +479,20 @@ form > .checkbox-div {
   font-size: 18px;
   color: var(--main-color);
 }
+
+.agree {
+  background: yellow;
+
+  padding-bottom: 120px;
+}
+
+.agree-con {
+  border: 1px solid #000;
+  margin-top: 80px;
+}
+
+.agree .agree-inner {
+  background: red;
+  height: 500px;
+  overflow-y: auto;
+}
