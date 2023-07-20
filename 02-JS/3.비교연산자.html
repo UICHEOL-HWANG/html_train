@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비교연산자 & 논리연산자</title>
+  </head>
+  <body>
+    <script>
+      let a = 10;
+      let b = 20;
+      let c = 10;
+      let d = '20';
+      let result;
+
+      result = a < b;
+      result = a <= c;
+      result = b < d;
+      result = b === d; // 데이터 타입까지 비교
+      result = b !== d; // 결과 값의 반대
+
+      result = !(a >= b);
+      document.write(result);
+      /* 논리 연사자*/
+      // OR 연산자
+      result = a > b || b === d;
+
+      // AND 연산자
+      result = c < d && b > d;
+
+      // NOT 연산자
+      result = !(c < d && b > d);
+      document.write(result);
+    </script>
+  </body>
+</html>

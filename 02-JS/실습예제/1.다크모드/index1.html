@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.버튼으로 제어</title>
+    <style>
+      body {
+        background: #fff;
+      }
+      body.dark {
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn-add" type="button">다크모드 구현</button>
+    <button id="btn-remove" type="button">다크모드 해제</button>
+    <script>
+      // 1. 대상 찾기
+      // const targetEl = document.querySelector('body');
+      const targetEl = document.body;
+
+      console.log(targetEl);
+      const btnAdd = document.getElementById('btn-add');
+      const btnRemove = document.getElementById('btn-remove');
+      console.log(btnRemove);
+      // 2. 이벤트
+      btnAdd.addEventListener('click', function () {
+        // 3. 적용 동작 -> body에 .dark 클래스가 들어가야한다
+        targetEl.classList.add('dark');
+      });
+
+      btnRemove.addEventListener('click', () => {
+        targetEl.classList.remove('dark');
+      });
+    </script>
+  </body>
+</html>

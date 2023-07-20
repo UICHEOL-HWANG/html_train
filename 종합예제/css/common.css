@@ -11,6 +11,11 @@
   --trs: 0.35s;
 }
 
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth; /* 링크 움직임을 부드럽게 */
 }
@@ -32,7 +37,7 @@ body {
 
 hr,
 .hidden {
-  /* 더미텍스트 날려버리는 작업 */.financial-info-tbl
+  /* 더미텍스트 날려버리는 작업 */
   position: absolute;
   margin: -1px;
   width: 1px;
