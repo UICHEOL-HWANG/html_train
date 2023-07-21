@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        border: 1px solid #000;
+        width: 75px;
+        height: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="text-box"></p>
+    <button type="button" id="rec-btn">꾸욱</button>
+    <script>
+      const menuList = ['피자', '햄버거', '짜장면', '떡볶이', '초밥', '샐러드', '카레', '김치찌개'];
+      const recBox = document.querySelector('#text-box');
+      const recBtn = document.querySelector('#rec-btn');
+
+      recBtn.addEventListener('click', function () {
+        let ranChoice = Math.floor(Math.random() * menuList.length);
+        recBox.textContent = menuList[ranChoice];
+      });
+    </script>
+  </body>
+</html>

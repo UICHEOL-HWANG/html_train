@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. 사용자 입력 값을 배경색으로</title>
+  </head>
+  <body>
+    <input type="text" id="colorBox" placeholder="원하는 컬러 HEX 코드로 입력 예) #fff>>" />
+    <button type="button" id="bntChange">버튼</button>
+    <script>
+      // 1. 대상을 변수에 저장
+      const body = document.body;
+      const colorBox = document.querySelector('#colorBox');
+      const bntChange = document.querySelector('#bntChange');
+
+      // 2. 이벤트 : click
+      bntChange.addEventListener('click', function () {
+        console.log(colorBox.value);
+        const color = colorBox.value;
+        // body에 배경색으로 적용
+        body.style.backgroundColor = color;
+        //조건
+        // 입력된 값이 없거나 입력된 값의 첫 글자가 #이 아닐 때
+        if (color === '' || color.charAt(0) !== '#') {
+          alert('#코드를 앞에 붙여서 다시 쓰세요');
+          colorBox.value = '';
+          //입력창에 포커스 주기
+          colorBox.focus();
+        } else if (color.length > 7) {
+          alert('글자수가 규격에 맞지 않습니다.');
+          colorBox.focus();
+        } else {
+          body.style.backgroundColor = color;
+        }
+      });
+    </script>
+  </body>
+</html>
