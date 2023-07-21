@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" class="change-bg">배경색 바꾸기</button>
+    <script>
+      const btnChange = document.querySelector('.change-bg');
+      const body = document.body;
+      const color = ['#f00', '#f55', '#ff0', '#5f5', '#00f', 'purple', 'orange'];
+
+      btnChange.addEventListener('click', changeBg);
+
+      function changeBg() {
+        let idx = Math.floor(Math.random() * color.length);
+        body.style.backgroundColor = color[idx];
+        // body.style.backgroundColor = color[idx]
+        console.log(idx);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 바꾸기</title>
+  </head>
+
+  <style></style>
+  <body>
+    <button type="button" class="change-bg">배경색 바꾸기</button>
+    <input type="text" class="change-wd" />
+    <script>
+      const colorArray = ['red', 'green', 'yellow'];
+      const btnChange = document.querySelector('.change-bg');
+      const body1 = document.body;
+      const wordArray = ['빨간', '초록', '노랑'];
+      const changeWord = document.querySelector('.change-wd');
+
+      function changeWd() {
+        changeWord.style.innerHTML = wordArray[i];
+        i++;
+        if (i === wordArray.length) {
+          i = 0;
+        }
+      }
+
+      // }
+      // body1.style.backgroundColor = 'purple';
+      // console.log(body1.style);
+      // for (i = 0; i < colorArray.length; i++) {
+      //   console.log(colorArray[i]);
+      // }
+      // //1.event
+
+      // for (i = 0; i < colorArray.length; i++) {
+      //   if (btnClick) {
+      //     body1.style.backgroundColor = Array[i];
+      //   }
+      // }
+      // for (i = 0; i < colorArray.length; i++) {
+      //   btnChange.addEventListener('click', function () {
+      //     body1.sytle.backgroundColor = colorArray[i];
+      //   });
+      // }
+
+      let i = 0;
+
+      // btnChange.addEventListener('click', function () {
+      //   body1.style.backgroundColor = colorArray[i];
+      //   i++;
+      //   if (i === colorArray.length) {
+      //     i = 0;
+      //   }
+      //   console.log(i);
+      // });
+
+      btnChange.addEventListener('click', function () {});
+      // 동작을 함수로 정의
+      function changeBg() {
+        body1.style.backgroundColor = colorArray[i];
+        i++;
+        if (i === colorArray.length) {
+          i = 0;
+        }
+      }
+      setTimeout(changeBg, 5000);
+
+      //타이머 함수
+    </script>
+  </body>
+</html>

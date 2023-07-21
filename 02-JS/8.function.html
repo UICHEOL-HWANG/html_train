@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function voca() {
+        console.log('안녕하세요 형님');
+      }
+      function voca2(name) {
+        console.log('안녕하세요 ' + name);
+      }
+
+      voca2('시발러마');
+      voca();
+      voca();
+      voca();
+      voca();
+      voca();
+      voca();
+      voca();
+
+      sayHi3();
+
+      //익명의 함수
+      //이름이 없기 때문에 변수에 넣어줘야 호출이 된다.
+      const sayHi3 = () => {
+        console.log('또왔습니다 행님');
+      };
+
+      sayHi3();
+    </script>
+  </body>
+</html>

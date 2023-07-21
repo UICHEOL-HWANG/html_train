@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.기본코드</title>
+  </head>
+  <body>
+    <script>
+      const options = ['가위', '바위', '보'];
+
+      //함수의 선언
+      function playGame(userChoice) {
+        // 1.컴퓨터가 옵션중에 하나를 선택한다 -> 변수에 저장
+        // const comChoice = options[1];
+        const comChoice = options[Math.floor(Math.random() * options.length)];
+        console.log(comChoice);
+        // 2. 컴퓨터의 선택과 사용자의 선택을 비교한다
+
+        if (userChoice === comChoice) {
+          console.log('비겼습니다.');
+        } else if (
+          (userChoice === '보' && comChoice === '가위') ||
+          (userChoice === '가위' && comChoice === '바위') ||
+          (userChoice === '바위' && comChoice === '보')
+        ) {
+          console.log('졌습니다.');
+        } else {
+          console.log('이겼다');
+        }
+        // 3. 결과를 뿌린다.
+      }
+
+      //함수의 호출
+      playGame('보');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*  let user_prompt = prompt('입력 >>', 0);
+
+      if (user_prompt >= 3 && user_prompt <= 5) {
+        alert('봄');
+      } else if (user_prompt >= 6 && user_prompt <= 8) {
+        alert('여름');
+      } else if (user_prompt >= 9 && user_prompt <= 11) {
+        alert('가을');
+      } else if (user_prompt > 12) {
+        alert('1년은 12개월입니다.');
+        location.reload();
+      } else {
+        alert('겨울');
+      }*/
+
+      // if (user_prompt >= 1 && user_prompt <= 12) {
+      // } else {
+      //   alert('1년은 12개월까지만');
+      // }
+
+      // 1. 사용자의 나이를 확인하고 성인 여부 판단
+
+      // const age = 20;
+
+      // if (age >= 18) {
+      //   console.log('성인입니다.');
+      // } else {
+      //   console.log('더 여물고와라');
+      // }
+
+      // 2. 주문한 음식이 있으면 '주문이 접수 되었습니다' 출력
+
+      // const hasOrder = true;
+
+      // if (hasOrder) {
+      //   console.log('주문이 접수되었습니다.');
+      // }
+
+      //3. 사용자의 등급에 따라서 할인율 결정하기
+      const userGrade = prompt('등급 입력>>');
+      let discountRate;
+
+      if (userGrade === 'gold') {
+        discountRate = 0.1;
+      } else if (userGrade === 'silver') {
+        discountRate = 0.05;
+      } else if (userGrade != 'gold' || userGrade != 'silver') {
+        console.log('없는 등급입니다.');
+      } else {
+        discountRate = 0;
+      }
+
+      console.log(discountRate);
+    </script>
+  </body>
+</html>

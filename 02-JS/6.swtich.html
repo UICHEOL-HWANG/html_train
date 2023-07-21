@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const fruit = '사과';
+
+      // switch (fruit) {
+      //   case '사과':
+      //     console.log('사과는...');
+      //     break;
+      //   case '포도':
+      //     console.log('포도는 ..');
+      //     break;
+      //   case '딸기':
+      //     console.log('딸기는..');
+      //     break;
+      //   default:
+      //     console.log('그런 과일 없습니다.');
+      //     break;
+      // }
+
+      // const site = prompt('사이트 입력 >>', 0);
+      // let url;
+      // switch (site) {
+      //   case '다음':
+      //     url = 'daum.net';
+      //     break;
+      //   case '네이버':
+      //     url = 'naver.com';
+      //     break;
+      //   case '구글':
+      //     url = 'google.com';
+      //     break;
+      //   default:
+      //     alert('어딜껄 쓰는거야?');
+      //     break;
+      // }
+      // console.log(url);
+
+      // if (url) {
+      //   location.href = 'https://' + url; /* url 값에 HTTPS://를 넣어놓는다 */
+      // }
+
+      const userGrade = prompt('등급 입력>>');
+      let discountRate;
+
+      switch (userGrade) {
+        case 'gold':
+          discountRate = 0.1;
+          break;
+        case 'silver':
+          discountRate = 0.05;
+          break;
+        case 'bronze':
+          discountRate = 0.025;
+          break;
+        default:
+          console.log('없는 등급입니다.');
+          break;
+      }
+      console.log('본인의 할인율은' + discountRate * 100 + '%입니다.');
+
+      // DATE() : 내장객체
+
+      const dday = new Date().getDay();
+      console.log(dday);
+
+      // 0 : 일요일
+      // 1 : 월요일
+      // 2 : 화요일
+      // 3 : 수요일
+      // 4 : 목요일
+      // 5 : 금요일
+      // 6 : 토요일
+
+      let task;
+
+      // 일요일이면 휴일이니 쉬라는 메세지를 콘솔에 입력
+      // 토요일이면 취미생활을 즐겨라라는 메세지를 콘솔에 출력
+      // 월~금이면 열심히 일해라 라는 메세지를 콘솔에 출력
+
+      switch (dday) {
+        case 6:
+          task = '취미생활을 즐겨라';
+          break;
+        case 0:
+          task = '휴일이니 쉬어라';
+          break;
+        default:
+          task = '열심히 일해라';
+          break;
+      }
+      console.log(task);
+
+      const dict_list = {};
+
+      while (true) {
+        const user_key = prompt('key 값 입력하세용 >>');
+        if (user_key === 'q') {
+          break;
+        }
+        const user_value = prompt('value 값 입력 >>');
+        dict_list[user_key] = user_value;
+      }
+      console.log(dict_list);
+    </script>
+  </body>
+</html>
