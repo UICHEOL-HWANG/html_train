@@ -14,6 +14,7 @@
   </head>
 
   <body>
+    <h1 style="font-size: 60px">0</h1>
     <p id="text-box"></p>
     <button type="button" id="rec-btn">꾸욱</button>
     <script>
@@ -25,6 +26,22 @@
         let ranChoice = Math.floor(Math.random() * menuList.length);
         recBox.textContent = menuList[ranChoice];
       });
+
+      // 반복 실행 타이머
+      let seconds = 1;
+      let timerId;
+      timerId = setInterval(function () {
+        console.log(seconds++);
+        // if (seconds > 5) {
+        //   clearInterval(timerId);
+        // } /* 만약 5초가 다가온다면 멈추게 한다 */
+        document.querySelector('h1').textContent = seconds++;
+        /* 숫자가 증가하는걸 h1 태그에 넣어준다 */
+        if (seconds > 5) {
+          clearInterval(timerId);
+          location.reload;
+        }
+      }, 1000);
     </script>
   </body>
 </html>
