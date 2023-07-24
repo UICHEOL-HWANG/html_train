@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열과 반복문</title>
+  </head>
+  <body>
+    <script>
+      // 1부터 100 사이의 랜덤한 숫자 10개를 가지고 있는 numbers 배열을 생성하고, 이 배열에서 짝수와 홀수를 구분해 evenNumbers와 oddNumbers 배열에 담아 출력하기
+      const numbers = [];
+      for (let i = 1; i <= 10; i++) {
+        const num = Math.floor(Math.random() * 100);
+        console.log(num);
+        numbers.push(num);
+      }
+
+      const evenNumbers = [];
+      const oddNumbers = [];
+
+      // numbers.forEach(function (item) {
+      //   if (item % 2 === 0) {
+      //     evenNumbers.push(item);
+      //   } else if (item % 2 === 1) {
+      //     oddNumbers.push(item);
+      //   }
+      // });
+      // console.log(numbers);
+      // console.log(evenNumbers);
+      // console.log(oddNumbers);
+
+      for (let item of numbers) {
+        if (item % 2 === 0) {
+          evenNumbers.push(item);
+        } else if (item % 2 === 1) {
+          oddNumbers.push(item);
+        }
+      }
+
+      console.log(evenNumbers);
+      console.log(oddNumbers);
+    </script>
+  </body>
+</html>

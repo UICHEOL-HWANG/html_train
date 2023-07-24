@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wrap {
+        border: 10px solid #000;
+        padding: 3vw;
+        font-weight: bold;
+        font-size: 10rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="info">10</div>
+    </div>
+
+    <script>
+      const $info = document.querySelector('.info');
+      //1초에 한 번씩 숫자가 줄어든다. (10 -> 0 이 될 때까지)
+      let count = 10;
+      let timer = setInterval(function () {
+        if (count === 0) {
+          bomb(); // 터짐
+          clearInterval(timer);
+        } else {
+          count--;
+        }
+        $info.textContent = count;
+      }, 1000);
+
+      function bomb() {
+        console.log('쾅');
+      }
+      bomb();
+    </script>
+  </body>
+</html>

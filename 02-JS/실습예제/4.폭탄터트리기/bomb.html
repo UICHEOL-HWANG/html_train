@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .wrap {
+        border: 10px solid #000;
+        padding: 3vw;
+        font-weight: bold;
+        font-size: 10rem;
+      }
+      .wrap .info {
+        text-align: center;
+      }
+
+      .btns {
+        display: flex;
+        gap: 20px;
+      }
+
+      .btns button {
+        border: 1px solid #000;
+        font-weight: 1500;
+        font-size: 1.5rem;
+        padding: 10px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="info">10</div>
+      <div class="btns">
+        <button type="button" id="go">달려</button>
+        <button type="button" id="stop">참아</button>
+      </div>
+    </div>
+
+    <script>
+      const btnGo = document.querySelector('#go');
+      const $info = document.querySelector('.info');
+      const btnStop = document.querySelector('#stop');
+
+      let timer;
+      let count = 10;
+      btnGo.addEventListener('click', () => {
+        timer = setInterval(function () {
+          if (count === 0) {
+            bomb(); // 터짐
+            clearInterval(timer);
+            count = 10;
+          } else {
+            count--;
+          }
+          $info.textContent = count;
+        }, 1000);
+      });
+
+      btnStop.addEventListener('click', () => {
+        clearInterval(timer);
+      });
+
+      function bomb() {
+        alert('쾅!');
+      }
+
+      //1초에 한 번씩 숫자가 줄어든다. (10 -> 0 이 될 때까지)
+    </script>
+  </body>
+</html>
