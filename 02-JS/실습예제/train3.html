@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .wrap {
+      border: 10px solid #000;
+      padding: 3vw;
+      background: #fff;
+      text-align: center;
+    }
+    .wrap .changeBg {
+      font-size: 2rem;
+      padding: 10px 20px;
+    }
+
+    .wrap .clearBg {
+      font-size: 2rem;
+      padding: 10px 20px;
+      display: block;
+      margin: 20px auto;
+    }
+    .wrap h1 {
+      font-size: 2vw;
+      font-size: 3rem;
+    }
+  </style>
+
+  <body>
+    <div class="wrap">
+      <h1>#fffff</h1>
+      <button type="button" class="changeBg">눌러주쇼</button>
+      <button type="button" class="clearBg">돌아와</button>
+    </div>
+    <script>
+      const changeBtn = document.querySelector('.changeBg');
+      const h1Html = document.querySelector('h1');
+      const body = document.body;
+      let timer;
+      const clearBtn = document.querySelector('.clearBg');
+      const hexdigit = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+
+      changeBtn.addEventListener('click', () => {
+        timer = setInterval(function () {
+          btnGo();
+        }, 1000);
+      });
+
+      // changeBtn.addEventListener('click', btnGo);
+      // const timer = setInterval(btnGo, 3000);
+
+      clearBtn.addEventListener('click', () => {
+        clearInterval(timer);
+        body.style.backgroundColor = '#fff';
+        h1Html.textContent = '#ffff';
+      });
+
+      function btnGo() {
+        let hexCode = '#';
+        for (i = 1; i <= 6; i++) {
+          let randomIdx = Math.floor(Math.random() * hexdigit.length);
+          hexCode += hexdigit[randomIdx];
+        }
+        body.style.backgroundColor = hexCode;
+        h1Html.textContent = hexCode;
+      }
+    </script>
+  </body>
+</html>
