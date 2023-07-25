@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 객체 : 주체가 바라보는 대상
+      // 데이터의 묶음 , 동작 등을 함께 저장할 수 있는 데이터 방식
+
+      const obj = {
+        bread: 'angbutter',
+        honey: 'strawberry jam',
+        'test num': 1000,
+        hobby: ['빵먹기', '밥먹기', '잠자기', '계속잠자기'],
+        greeting: function () {
+          console.log(
+            `하이루 저는 ${this.bread}를 좋아합니다 ${this.bread}에 ${this.honey}를 찍어먹으면 개꿀 바디입니다 가격은 ${this['test num']}만원이고 이걸 다 처먹고 저는 ${this.hobby[3]}을 할겁니다. `
+          );
+        },
+      };
+
+      console.log(obj.honey);
+      console.log(obj.bread); // 접근 연산자(.)
+      console.log(obj['bread']); // 대괄호 안에 키를 문자열로 전달
+      console.log(obj['test num']); // 띄어쓰기도 가능하나 따옴표를 붙어줘야한다
+
+      console.log(obj['hobby'][3]);
+      obj.greeting();
+
+      // 객체의 속성 변경
+      obj.bread = 'donut';
+      obj.greeting();
+
+      // 객체의 속성 추가
+      obj.ablity = 'eating';
+      console.log(obj);
+
+      obj.hiroo = function () {
+        console.log('하이루방가');
+      };
+
+      // 객체 속성을 삭제
+      obj.test = 'test';
+
+      console.log(obj);
+
+      // 원시타입 vs 참조타입
+      // setTimeout(function () {
+      //   delete obj.test;
+      //   console.log(obj);
+      // }, 2000);
+
+      //객체 순회 (fof ... in)
+
+      for (const key in obj) {
+        console.log(`${key} : ${obj[key]}`);
+      }
+
+      // 객체 이용한 계산기 만들기
+
+      // const calc = {
+      //   add: function (num1, num2) {
+      //     return num1 + num2;
+      //   },
+      //   sub: function (num1, num2) {
+      //     return num1 - num2;
+      //   },
+      //   mul: function (num1, num2) {
+      //     return num1 * num2;
+      //   },
+      //   div: function (num1, num2) {
+      // if (num2 === 0) {
+      //   return '0으로는 나눌 수 없습니다';
+      // } else {
+      //   return num1 / num2;
+      // }
+      //   },
+      // };
+
+      //삼항 조건문
+      // (조건) ? 실행문1 : 실행문2
+      const calc = {
+        add: (num1, num2) => num1 + num2, // 익명의 함수를 통해 중괄호 대괄호도 모두 생략이 가능하다
+        sub: function (num1, num2) {
+          return num1 - num2;
+        },
+        mul: function (num1, num2) {
+          return num1 * num2;
+        },
+        div: (num1, num2) => (num2 === 0 ? '0으로는 나눌 수 없다' : num1 / num2),
+      };
+
+      // 만들어진 계산기 객체를 이용해서 7 * 8 을 계산하라
+
+      console.log(calc['div'](7, 0));
+    </script>
+  </body>
+</html>

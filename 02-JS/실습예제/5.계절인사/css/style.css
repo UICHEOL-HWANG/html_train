@@ -1,0 +1,67 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Noto+Sans+KR:wght@400;900&display=swap');
+
+body {
+  /* 영문(숫자 포함), 한글 폰트 순서로 정의 */
+  font: 3vw/1.5 'Montserrat', 'Pretendard', sans-serif;
+  color: #222;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  display: block;
+  width: 612px;
+  height: 640px;
+  background: url(../img/season.png) 0 0 no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.wrap {
+  text-align: center;
+}
+
+.season {
+  font-weight: 900;
+  font-size: 5vw;
+}
+
+/* 사계절용 디자인 */
+
+.spring {
+  background: yellowgreen;
+}
+
+.summer {
+  background: skyblue;
+}
+
+.fall {
+  background: darkgoldenrod;
+}
+
+.winter {
+  background: darkslateblue;
+}
+
+body.spring::before {
+  background-position: 0 -640px;
+}
+body.summer::before {
+  background-position: -612px -640px;
+}
+body.fall::before {
+  background-position: 0 0;
+}
+body.winter::before {
+  background-position: -612px 0;
+}
