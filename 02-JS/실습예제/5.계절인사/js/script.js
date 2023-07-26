@@ -81,3 +81,32 @@ switch (month_seaon) {
 
 $season.textContent = seasonText;
 $body.classList.add(seasonName);
+
+const dayTime = new Date().getHours();
+let TimeBg;
+console.log(dayTime);
+
+// switch (dayTime) {
+//   case 6:
+//   case 7:
+//   case 8:
+//   case 9:
+//   case 10:
+//   case 11:
+//   case 12:
+//   case 13:
+//   case 14:
+//   case 15:
+//   case 16:
+//   case 17:
+//     TimeBg = 'day';
+//     break;
+//   default:
+//     TimeBg = 'night';
+// }
+
+dayTime >= 0 && dayTime <= 17 ? $body.classList.add('day') : $body.classList.add('night');
+
+$body.classList.add(TimeBg);
+
+// 글자의 등장 애니메이션

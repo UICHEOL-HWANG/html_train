@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타노스</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap {
+        background: #ff5;
+      }
+      .result-box {
+        padding: 10px;
+        border: 10px solid #000;
+        font-size: 2vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="result-box">asdasd</div>
+    </div>
+
+    <script>
+      const resultBox = document.querySelector('.result-box');
+
+      let resultText;
+      const result = Math.floor(Math.random() * 2);
+
+      if (result) {
+        resultText = '살았다';
+        localStorage.setItem('resultValue', 'alive');
+      } else {
+        resultText = '죽었네';
+        localStorage.setItem('resultValue', 'die');
+      }
+
+      resultBox.innerHTML = `<h1>${resultText}</h1>`;
+    </script>
+  </body>
+</html>

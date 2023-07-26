@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과 값이 저장 및 가져오기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap {
+        background: #ff5;
+      }
+      .result-box {
+        padding: 10px;
+        border: 10px solid #000;
+        font-size: 2vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="result-box"></div>
+    </div>
+
+    <script>
+      const resultBox = document.querySelector('.result-box');
+      //결과값이 저장되어 있는지 확인
+      const saveValue = localStorage.getItem('resultValue');
+      console.log(saveValue);
+
+      if (saveValue === null) {
+        // 처음 방문이니 심판을 받아야한다.
+        fingerSnap();
+      } else {
+        // 이미 심판을 받은 경우 저장된 값이 있는 상태
+        if (saveValue === 'alive') {
+          resultText = '살았네?';
+        } else {
+          resultText = '죽었네';
+        }
+      }
+      resultBox.innerHTML = `<h1>${resultText}</h1>`;
+
+      //타노스가 손가락을 튕겨서 죽느냐 사느냐가 결정된다
+      function fingerSnap() {
+        let resultText;
+        const result = Math.floor(Math.random() * 2);
+
+        if (result) {
+          resultText = '살았다';
+          localStorage.setItem('resultValue', 'alive');
+        } else {
+          resultText = '죽었네';
+          localStorage.setItem('resultValue', 'die');
+        }
+      }
+
+      // fingerSnap();
+    </script>
+  </body>
+</html>
