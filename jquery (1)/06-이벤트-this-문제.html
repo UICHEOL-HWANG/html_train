@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <style>
+      .on {
+        background: #00f;
+        color: #fff;
+        font-weight: bold;
+      }
+    </style>
+    <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 메뉴를 클릭하면 그 놈의 배경에 파란색을 칠해라
+        $('.menu1 li').on('click', function (e) {
+          e.preventDefault();
+          const idx = $(this).index();
+          console.log(idx);
+          $('.menu1 li').css('background', '');
+          $('.menu1 li').eq(idx).css('background', 'blue');
+        });
+
+        $('.menu2 li').on('click', function (e) {
+          e.preventDefault(); /* 클릭시 링크 이동을 막아라 */
+
+          // $('.menu2 li').css('background', '');
+          // $(this).css('background', 'blue');
+          $('.menu2 li').removeClass('on');
+          $(this).addClass('on');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>index()</h2>
+    <ul class="menu1">
+      <li><a href="http://www.daum.net">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+      <li><a href="#">메뉴4</a></li>
+      <li><a href="#">메뉴5</a></li>
+    </ul>
+
+    <h2>this</h2>
+    <ul class="menu2">
+      <li><a href="http://www.daum.net">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="">메뉴3</a></li>
+      <li><a href="">메뉴4</a></li>
+      <li><a href="">메뉴5</a></li>
+    </ul>
+  </body>
+</html>

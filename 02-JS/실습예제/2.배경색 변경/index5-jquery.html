@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 선택하기 - jqeury</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap {
+        /* background: #ff5; */
+        text-align: center;
+      }
+
+      .wrap ul {
+        display: flex;
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .wrap ul li {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .wrap ul li:nth-child(1) {
+        background: #0d3b66;
+      }
+      .wrap ul li:nth-child(2) {
+        background: #faf0ca;
+      }
+      .wrap ul li:nth-child(3) {
+        background: #f95738;
+      }
+      .wrap ul li:nth-child(4) {
+        background: #7f9183;
+      }
+      .wrap ul li:nth-child(5) {
+        background: #7fb800;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>배경색을 선택 - jqeury</h1>
+      <ul>
+        <li data-color="#0d3b66">#0d3b66</li>
+        <li data-color="#faf0ca">#faf0ca</li>
+        <li data-color="#f95738">#f95738</li>
+        <li data-color="#7f9183">#7f9183</li>
+        <li data-color="#7fb800">#7fb800</li>
+      </ul>
+    </div>
+    <script src="./jquery-3.7.0.min.js"></script>
+    <script>
+      const targetEl = $('body');
+      const liEl = $('.wrap li');
+      console.log(liEl);
+
+      liEl.on('click', function () {
+        const selectColor = $(this).attr('data-color');
+        console.log(selectColor);
+        targetEl.css('background-color', selectColor);
+      });
+    </script>
+  </body>
+</html>

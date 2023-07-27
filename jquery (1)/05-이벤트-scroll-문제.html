@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트</title>
+    <style>
+      body {
+        width: 5000px;
+        height: 10000px;
+        background: url(https://i.namu.wiki/i/Qq_k0heL2MW1Gss55D2SO3IVYYhwi-Oyw__iuSeiSGd6R5iW--BHtFtGXeNH2K-vs0WX5vqU44cR3Y0oeN_A5w.gif)
+          0 0 no-repeat;
+      }
+      .info {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        padding: 10px;
+        border: 5px solid #000;
+        background: #fff;
+      }
+    </style>
+    <script src="./js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 윈도우에 스크롤 이벤트가 발생하면 실행
+        $(window).on('scroll', function () {
+          let scTop = $(this).scrollTop();
+          let scLeft = $(this).scrollLeft();
+
+          $('.sc-top').text(scTop);
+          $('.sc-left').text(scLeft);
+        });
+        // 현재 윈도우의 상단 스크롤 위치를 scTop변수에 담고
+        // 현재 윈도우의 왼쪽 스크롤 위치를 scLeft변수에 담아
+        // 각각 .info 창에 해당하는 strong 요소에 뿌려라.
+      });
+    </script>
+  </head>
+  <body>
+    <div class="info">
+      <p>위에서부터 <strong class="sc-top">0</strong>px 스크롤</p>
+      <p>왼쪽에서부터 <strong class="sc-left">0</strong>px 스크롤</p>
+    </div>
+  </body>
+</html>
