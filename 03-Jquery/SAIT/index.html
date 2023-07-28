@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAIT</title>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+
+  <body>
+    <a href="#container" class="hidden">본문 바로가기</a>
+
+    <header class="header">
+      <div class="inner">
+        <nav>
+          <h1 class="ci">
+            <a href="#"><i class="hidden">SAIT</i></a>
+          </h1>
+
+          <ul class="gnb">
+            <li>
+              <a href="#">About SAIT</a>
+              <!-- submenu -->
+              <ul class="submenu">
+                <li><a href="#">sub 01</a></li>
+                <li><a href="#">sub 02</a></li>
+                <li><a href="#">sub 03</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">Research Areas</a>
+              <!-- submenu -->
+              <ul class="submenu">
+                <li><a href="#">sub 01</a></li>
+                <li><a href="#">sub 02</a></li>
+                <li><a href="#">sub 03</a></li>
+                <li><a href="#">sub 04</a></li>
+                <li><a href="#">sub 05</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">News &amp; Events</a>
+              <!-- submenu -->
+              <ul class="submenu">
+                <li><a href="#">sub 01</a></li>
+                <li><a href="#">sub 02</a></li>
+                <li><a href="#">sub 03</a></li>
+                <li><a href="#">sub 04</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Join Us</a>
+              <!-- submenu -->
+              <ul class="submenu">
+                <li><a href="#">sub 01</a></li>
+                <li><a href="#">sub 02</a></li>
+                <li><a href="#">sub 03</a></li>
+                <li><a href="#">sub 04</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <a href="#" class="btn btn-search"><i class="hidden">검색</i></a>
+        </nav>
+      </div>
+    </header>
+    <!-- 검색 창 -->
+    <form action="#">
+      <div class="search">
+        <div class="search-box">
+          <input type="text" placeholder="input Text" />
+          <button type="submit"><i class="hidden">검색</i></button>
+        </div>
+      </div>
+    </form>
+
+    <main id="container">
+      <section class="visual-wrap">
+        <h2 class="hidden">메인 비주얼</h2>
+
+        <div class="visual-slider-wrap">
+          <div class="visual-slider">
+            <img src="./images/visual-pic1.jpg" alt="메인 비주얼" />
+            <img src="./images/visual-pic2.jpg" alt="서브 비주얼2" />
+            <img src="./images/visual-pic3.jpg" alt="서브 비주얼3" />
+          </div>
+          <a href="#" class="btn btn-prev"><i class="hidden">이전</i></a>
+          <a href="#" class="btn btn-next"><i class="hidden">다음</i></a>
+        </div>
+      </section>
+
+      <section class="research-wrap">
+        <div class="inner">
+          <h2 class="section-title">research areas</h2>
+          <!-- ul.research-list>li*9>a>dl>dt+dd -->
+          <ul class="research-list">
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>AI Algorithms</dt>
+                  <dd>Understanding users and environments with human- level intelligence</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Computing Platform</dt>
+                  <dd>A new computing processor that mimics the human brain</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Human Augmentation</dt>
+                  <dd>Technology that Expanding Human Capabilities</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Metaphotonics</dt>
+                  <dd>The Magic of Light Demonstrated by Artificial Nanostructure</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Nano Electronics</dt>
+                  <dd>Innovative Devices Using Nano New Materials</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Display Materials</dt>
+                  <dd>Novel Technologies for Luminescent and Organic Electronic Materials</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Battery Materials</dt>
+                  <dd>New materials and chemistry for safer and longer use of batteries</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Semiconductor Materials</dt>
+                  <dd>Next-generation semiconductor materials for “More Moore” and “Beyond Moore”</dd>
+                </dl>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <dl>
+                  <dt>Environmental Research</dt>
+                  <dd>Sustainable materials designed for the capture and decompose of pollutants</dd>
+                </dl>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="join-wrap">
+        <div class="inner">
+          <h2 class="section-title">Join us</h2>
+
+          <div class="join-con">
+            <h3>Application Process</h3>
+            <p>
+              SAIT is looking for highly creative people to lead the future. The institute's world-class lab facilities
+              and broad scope of research provides a rich environment for conducting cutting-edge scientific and
+              technological innovation
+            </p>
+            <a href="#" class="more">Read more</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="inner">
+        <div class="foot-link">
+          <!-- ul.links>li*3>a -->
+          <ul class="links">
+            <li><a href="#">Privacy Statement</a></li>
+            <li><a href="#">Legal Notice</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="foot-con">
+          <div class="copyright">
+            <p>130, Samsung-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, 16678, Korea.</p>
+            <p><strong>Copyright &copy; 2005-2018 SAMSUNG All Rights Reserved.</strong></p>
+          </div>
+
+          <div class="foot-ci">
+            <img src="./images/footer-logo.png" alt="SAIT" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
