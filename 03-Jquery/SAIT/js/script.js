@@ -38,4 +38,7 @@ $(function () {
     // slidesToShow: 3, // 한 화면에 보여질 슬라이드의 개수
     // slidesToScroll: 3, // 한번에 슬라이딩 될 개수
   });
+
+  // AOS.js 초기화
+  AOS.init();
 });

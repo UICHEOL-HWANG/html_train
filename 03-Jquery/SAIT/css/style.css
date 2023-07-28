@@ -249,6 +249,7 @@ body {
   flex-wrap: wrap;
   gap: 20px 20px;
   margin-top: 61px;
+  perspective: 600px;
 }
 
 .research-list li {
@@ -260,12 +261,14 @@ body {
   /* before에 적용 시켜주는 옵션 */
   transition: 0.4s;
   position: relative;
+  transform: rotateY(10deg);
 }
 
 /* li 메뉴바 마우스 포인터 이벤트 */
 .research-list li:hover {
   /* li에 마우스가 닿았을 때 */
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+  transform: rotate(0deg);
 }
 
 .research-list li::before {
@@ -378,4 +381,84 @@ body {
 .research-list li a dl > dd {
   margin-top: 18px;
   font-size: 14px;
+}
+
+/* Join-us 꾸미기 */
+.join-wrap {
+  min-height: 690px;
+  background: url(../images/join_img.jpg) 50% 0 / cover no-repeat fixed;
+  padding: 75px 0;
+  color: #fff;
+}
+
+.join-wrap .section-title {
+  color: #fff;
+}
+
+.join-con {
+  width: 640px;
+  /* background: #f5f; */
+  margin-top: 119px;
+}
+
+.join-con h3 {
+  font: 700px;
+  font-size: 44px;
+}
+.join-con p {
+  margin-top: 31px;
+  font-size: 20px;
+}
+
+.join-con .more {
+  /* background: #000; */
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 34px;
+}
+
+.join-con a::after {
+  content: '';
+  width: 9px;
+  height: 12px;
+  background: url(../images/ico-more.png) 0 0 no-repeat;
+  display: block;
+}
+
+.footer {
+  background: #000;
+  color: var(--foot-color);
+  padding: 77px 0;
+}
+
+.foot-link {
+  display: flex;
+}
+
+.links {
+  /* background: red; */
+  display: flex;
+  gap: 32px;
+}
+.links li a {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.foot-con {
+  /* background: yellow; */
+  border-top: 1px solid #fff;
+  margin-top: 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 31px;
+}
+
+.copyright p + p {
+  margin-top: 6px;
+  font-weight: 600;
 }

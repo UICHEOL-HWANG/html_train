@@ -7,13 +7,14 @@
     <title>SAIT</title>
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js charset='utf-8'"></script>
   </head>
 
   <body>
@@ -103,7 +104,7 @@
         <div class="inner">
           <h2 class="section-title">research areas</h2>
           <!-- ul.research-list>li*9>a>dl>dt+dd -->
-          <ul class="research-list">
+          <ul data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" class="research-list">
             <li>
               <a href="#">
                 <dl>
@@ -180,8 +181,8 @@
         </div>
       </section>
 
-      <section class="join-wrap">
-        <div class="inner">
+      <section data-aos="fade-up" class="join-wrap">
+        <div data-aos="fade-up" class="inner">
           <h2 class="section-title">Join us</h2>
 
           <div class="join-con">
