@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>동적list</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrap {
+        height: 100vh;
+        background: #ff5;
+      }
+      .kakao {
+        background: #5f5;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 700px;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      .kakao-con {
+        border: 1px solid #000;
+        background: #fff;
+        width: 50px;
+        border-radius: 50px;
+        flex-grow: 1; /* 공간의 여유가 있으면 늘어나라 */
+        flex-shrink: 1; /* 공간을 줄어들게 만들어줌 */
+        flex-basis: 22%; /* 기본 점유 크기 */
+        flex: 1 1 30%; /* 위 3개의 옵션의 축약 속성이다 */
+        text-align: center;
+        overflow: hidden;
+      }
+      .kakao-con img {
+        object-fit: cover;
+      }
+
+      .kakao p {
+      }
+    </style>
+    <script src="../js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script>
+      $(function () {
+        // 1. 화면에 표현될 내용을 배열로 저장
+        const kakaoArr = [
+          ['kakao_01.jpg', '카카오 소풍1', '2,000원'],
+          ['kakao_02.jpg', '카카오 소풍2', '4,000원'],
+          ['kakao_03.jpg', '카카오 소풍3', '3,000원'],
+          ['kakao_01.jpg', '카카오 소풍4', '5,000원'],
+          ['kakao_02.jpg', '카카오 소풍5', '4,000원'],
+          ['kakao_02.jpg', '카카오 소풍6', '4,000원'],
+          ['kakao_02.jpg', '카카오 소풍7', '4,000원'],
+          ['kakao_02.jpg', '카카오 소풍8', '4,000원'],
+          ['kakao_02.jpg', '카카오 소풍9', '4,000원'],
+        ];
+        console.log(kakaoArr[0][0]);
+        // 2. 동적으로 구조를 표현(삽입)
+        const content = `
+        <div class="kakao-con">
+          <img src="./img/kakao_01.jpg" alt="" />
+          <p>카카오 소풍</p>
+          <strong>2,000원</strong>
+        </div>`;
+
+        // 3. 동적으로 구조를 추가
+        // 대상.append('내용')
+        for (let i = 0; i < kakaoArr.length; i++) {
+          $('.kakao').append(content);
+          $('.kakao-con').each(function (index, item) {
+            $(this)
+              .find('img')
+              .attr('src', './img/' + kakaoArr[index][0]);
+            $(this).find('p').text(kakaoArr[index][1]);
+            $(this).find('strong').text(kakaoArr[index][2]);
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="kakao">
+        <!-- <div class="kakao-con">
+          <img src="./img/kakao_01.jpg" alt="" />
+          <p>카카오 소풍</p>
+          <strong>2,000원</strong> 
+        </div>  -->
+      </div>
+    </div>
+  </body>
+</html>
