@@ -23,16 +23,15 @@ $(function () {
     if (videoSrc) {
       $galleryContent.html(`<iframe src="${videoSrc}?autoplay=1;loop=1" allow="autoplay;"></iframe>`);
       $popup.css('width', $(window).outerWidth() / 2);
-      $galleryContent.append(videoSrc);
     } else {
       $galleryContent.html(`<img src="${imgSrc}"/>`);
       $popup.css('width', $(window).outerWidth() / 3);
-      $galleryContent.append(imgTitle);
     }
     //3. 동영상 정보가 있는 경우, iframe 태그로 조합한다
 
     // const videoSrc = $tarGet.data('link');도 가능함
     console.log(imgSrc, imgTitle, videoSrc);
+    $galleryContent.prepend(`<strong>${imgTitle}</strong>`);
   });
 
   $btnClose.on('click', function () {

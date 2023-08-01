@@ -71,3 +71,17 @@
 .gallery-content img {
   width: 100%;
 }
+
+.gallery-content strong {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  /* 말줄임 표시 */
+
+  width: 90%;
+  white-space: nowrap; /* 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 점점으로 줄여준다 */
+}

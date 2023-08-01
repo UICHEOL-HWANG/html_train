@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탭 메뉴 구현</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .tab {
+        width: 70%;
+        margin: 50px auto;
+        background: #ff5;
+      }
+
+      .tab-menu {
+        display: flex;
+        gap: 20px;
+      }
+      .tab-menu a {
+        padding: 10px 20px;
+        border: 1px solid #000;
+        text-decoration: none;
+      }
+
+      .tab-menu a.on {
+        background: #000;
+        color: #fff;
+      }
+      .tab-content {
+        background: #f5f;
+      }
+      .tab-content .tab-con-item {
+        border: 1px solid #000;
+        height: 150px;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function () {
+        const $tabMenu = $('.tab-menu > a');
+        const $tabContent = $('.tab-con-item');
+        console.log($tabMenu, $tabContent);
+
+        $tabMenu.on('click', function (e) {
+          e.defaultPrevented; /* a의 기본동작을 막아주는 디폴트값  */
+          // 클릭한 요소의 인덱스를 가져오고 --> index()
+          const tIdx = $(this).index();
+          tabAction(0);
+        });
+
+        // 이벤트와는 별개의 함수 정의
+
+        function tabAction(index) {
+          $tabMenu.removeClass('on');
+          $tabMenu.eq(index).addClass('on');
+          $tabContent.hide();
+          $tabContent.eq(index).show();
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- .tab>.tab-menu+.tab-content -->
+    <div class="tab">
+      <div class="tab-menu">
+        <a href="#">menu1</a>
+        <a href="#">menu2</a>
+        <a href="#">menu3</a>
+      </div>
+      <div class="tab-content">
+        <div class="tab-con-item">첫 번째 내용 영역</div>
+        <div class="tab-con-item">두 번째 내용 영역</div>
+        <div class="tab-con-item">세 번째 내용 영역</div>
+      </div>
+    </div>
+  </body>
+</html>

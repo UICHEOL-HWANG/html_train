@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘 뭐 먹지?</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      ol,
+      li {
+        list-style: none;
+      }
+      body {
+        height: 100vh;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+      }
+
+      .food {
+        width: 300px;
+        margin: 50px auto;
+        border: 1px solid #000;
+      }
+      .food figure {
+        aspect-ratio: 4/3;
+      }
+      .food figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .food dl {
+        padding: 30px;
+      }
+      .btn-recommend {
+        padding: 20px 30px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .exclude {
+        padding: 30px;
+        border: 10px solid #eee;
+        display: flex;
+        gap: 30px;
+      }
+
+      .btn-recommend {
+        width: 300px;
+        height: 100px;
+        display: block;
+        margin: 20px auto;
+      }
+
+      dl {
+        text-align: center;
+      }
+      /* .exclude input {
+        display: none;
+      }
+      .exclude input + label {
+        border: 1px solid #000;
+        padding: 10px;
+        border-radius: 30px;
+      }
+
+      .exclude input:checked + label {
+        border-color: #ccc;
+        color: #ccc;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="food">
+      <figure><img src="" alt="" /></figure>
+      <dl>
+        <dt></dt>
+        <dd></dd>
+      </dl>
+    </div>
+
+    <button type="button" class="btn-recommend">오늘 뭐 먹지?</button>
+
+    <div class="exclude">
+      <input type="checkbox" id="ko" value="한식" /><label for="ko">한식</label>
+      <input type="checkbox" id="cn" value="중식" /><label for="cn">중식</label>
+      <input type="checkbox" id="jp" value="일식" /><label for="jp">일식</label>
+    </div>
+    <script>
+      let foods = [
+        {
+          food: '김치찌개',
+          img: 'http://www.lampcook.com/wi_files/food_top100/top12/12_1_1.jpg',
+          category: '한식',
+        },
+        {
+          food: '된장찌개',
+          img: 'http://www.lampcook.com/wi_files/food_top100/top12/12_1_2.jpg',
+          category: '한식',
+        },
+        {
+          food: '불고기',
+          img: 'http://www.lampcook.com/wi_files/food_top100/top12/12_1_3.jpg',
+          category: '한식',
+        },
+        {
+          food: '비빔밥',
+          img: 'http://www.lampcook.com/wi_files/food_top100/top12/12_1_5.jpg',
+          category: '한식',
+        },
+        {
+          food: '삼겹살',
+          img: 'http://www.lampcook.com/wi_files/food_top100/top12/12_1_7.jpg',
+          category: '한식',
+        },
+        {
+          food: '청국장',
+          img: 'http://www.lampcook.com/wi_files/food_top100/top12/12_1_10.jpg',
+          category: '한식',
+        },
+        {
+          food: '짬뽕',
+          img: 'https://mblogthumb-phinf.pstatic.net/20150103_128/skin_24_1420275046103dJDzw_JPEG/%C1%DF%C8%AD%BF%E4%B8%AE_%C1%BE%B7%F9_%286%29.jpg?type=w2',
+          category: '중식',
+        },
+        {
+          food: '탕수육',
+          img: 'https://mblogthumb-phinf.pstatic.net/20150103_174/skin_24_1420275046685sVpzz_JPEG/%C1%DF%C8%AD%BF%E4%B8%AE_%C1%BE%B7%F9_%2810%29.jpg?type=w2',
+          category: '중식',
+        },
+        {
+          food: '우동',
+          img: 'https://mblogthumb-phinf.pstatic.net/20150103_286/skin_24_1420275047143Af4js_JPEG/%C1%DF%C8%AD%BF%E4%B8%AE_%C1%BE%B7%F9_%283%29.jpg?type=w2',
+          category: '중식',
+        },
+        {
+          food: '덴푸라',
+          img: 'https://a.cdn-hotels.com/gdcs/production142/d1428/21bf55a6-0124-475b-b3a4-d338651b0dec.jpg?impolicy=fcrop&w=1600&h=1066&q=medium',
+          category: '일식',
+        },
+        {
+          food: '소바',
+          img: 'https://a.cdn-hotels.com/gdcs/production122/d1480/a2c0c3e3-82e1-4e5c-8a66-94b37a8daf1c.jpg?impolicy=fcrop&w=1600&h=1066&q=medium',
+          category: '일식',
+        },
+        {
+          food: '초밥',
+          img: 'https://a.cdn-hotels.com/gdcs/production139/d788/1e28039e-65d5-4bbb-8e18-4be9b40ba487.jpg?impolicy=fcrop&w=1600&h=1066&q=medium',
+          category: '일식',
+        },
+        {
+          food: '오코노미야키',
+          img: 'https://a.cdn-hotels.com/gdcs/production179/d1545/2f5e3418-dabb-4591-8186-16e3d7272aa1.jpg?impolicy=fcrop&w=1600&h=1066&q=medium',
+          category: '일식',
+        },
+      ];
+
+      let allFoods = [...foods];
+
+      // 대상을 변수로
+
+      const btnRecommend = document.querySelector('.btn-recommend');
+      const foodImg = document.querySelector('.food figure img');
+      const foodName = document.querySelector('.food dl dt');
+      const foodCategory = document.querySelector('.food dl dd');
+      const exclude = document.querySelector('.exclude');
+
+      // 동작 오늘 뭐먹지 버튼을 클릭하면
+      btnRecommend.addEventListener('click', () => {
+        const foodIdx = Math.floor(Math.random() * foods.length);
+        foodImg.setAttribute('src', foods[foodIdx].img);
+        foodName.textContent = foods[foodIdx].food;
+        foodCategory.textContent = foods[foodIdx].category;
+      });
+
+      // 추천에서 제외하는 input을 클릭하면
+
+      exclude.addEventListener('click', function (e) {
+        // console.log(e.target);
+
+        if (e.target.tagName === 'INPUT') {
+          const category = e.target.value;
+          const isChecked = e.target.checked;
+          console.log(category, isChecked);
+          if (isChecked) {
+            // 추천 음식 배열에서 해당 카테고리를 제외
+            foods = foods.filter((food) => food.category !== category);
+          } else {
+            // 다시 추천 음식 배열에 제외 된 카테고리 (선택된 카테고리)를 추가
+            const addFoods = allFoods.filter((food) => food.category === category);
+            foods = [...foods, ...addFoods];
+          }
+        }
+        if (foods.length === 0) {
+          alert('음식이 비었습니다');
+          location.reload();
+        }
+      });
+    </script>
+  </body>
+</html>

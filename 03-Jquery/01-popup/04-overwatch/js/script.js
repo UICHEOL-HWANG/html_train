@@ -2,6 +2,7 @@ $(function () {
   const heroes = [
     {
       name: '파라',
+      bgImg: '#000',
       pic: 'parah.png',
       bgImg: '960_Pharah.jpg',
       position: '공격',
@@ -10,6 +11,7 @@ $(function () {
     },
     {
       name: '자리야',
+      bgColor: '#f5f',
       pic: 'zariya.png',
       bgImg: '960_Zarya.jpg',
       position: '돌격',
@@ -18,6 +20,7 @@ $(function () {
     },
     {
       name: '정크랫',
+      bgColor: '#00f',
       pic: 'junk.png',
       bgImg: '960_Junkrat.jpg',
       position: '공격',
@@ -26,6 +29,7 @@ $(function () {
     },
     {
       name: '윈스턴',
+      bgColor: '#f39',
       pic: 'winston.png',
       bgImg: '960_Winston.jpg',
       position: '돌격',
@@ -65,7 +69,7 @@ $(function () {
 
       // 영웅 카드 아이템을 클릭했을 때 이벤트
       $(this).on('click', function () {
-        $('.dim').fadeIn();
+        $('.dim').fadeIn().css('background', heroes[index].bgColor);
         $('.popup').addClass('active');
         /* $('.popup').find('video').attr('src', heroes[index].vod); */
         $('.popup').find('.vod-con').html(`<video src = "${heroes[index].vod}" autoplay muted loop> </video>`);
