@@ -55,7 +55,7 @@ $(function () {
 
   for (let i = 0; i < heroes.length; i++) {
     $('.hero-list').append(content);
-    $('li').each(function (index, item) {
+    $('.hero-list li').each(function (index, item) {
       $(this)
         .find('img')
         .attr('src', './img/' + heroes[index].pic);
@@ -67,13 +67,18 @@ $(function () {
       $(this).on('click', function () {
         $('.dim').fadeIn();
         $('.popup').addClass('active');
-        $('.popup').find('video').attr('src', heroes[index].vod);
+        /* $('.popup').find('video').attr('src', heroes[index].vod); */
+        $('.popup').find('.vod-con').html(`<video src = "${heroes[index].vod}" autoplay muted loop> </video>`);
+        $('.hero-info').find('dd').text(heroes[index].desc);
+        $('.hero-info').find('dt').text(heroes[index].name);
+        $('.bg').html(`<img src= "./img/${heroes[index].bgImg}"`);
       });
     });
   }
   $('.btn-close').on('click', function () {
     $('.dim').fadeOut();
     $('.popup').removeClass('active');
+    $('.bg').find('img').remove();
   });
   $('.dim').on('click', function () {
     $(this).fadeOut();

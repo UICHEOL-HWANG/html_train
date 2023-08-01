@@ -1,0 +1,73 @@
+@charset 'utf-8';
+
+.wrap {
+  width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 10px solid #eee;
+}
+
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid #fff;
+  opacity: 0;
+  transition: 0.4s;
+  background: #fff;
+}
+
+.popup.active {
+  opacity: 1;
+  top: 50%;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+/* masonry처럼 보이게 */
+.gallery-list {
+  column-count: 4;
+  column-gap: 10px;
+}
+
+.gallery-list li {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.gallery-list img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.gallery-content iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+.gallery-content img {
+  width: 100%;
+}
