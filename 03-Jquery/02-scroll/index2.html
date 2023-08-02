@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>scroll</title>
+    <title>scroll - resize 대체, 요소 움직이기</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
       integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
@@ -15,14 +15,19 @@
         // 대상을 변수로 저장해놓고
         const $win = $(window);
         const $doc = $(document);
-        const $bar = $('.progress-bar');
-        const winHeight = $win.outerHeight(); // border , padding이 포함된 크기
-        // 내장객체는 따옴표 없고 내부 요소는 ''를 붙여야한다
-        const docHeight = $doc.outerHeight();
-        console.log(winHeight, docHeight);
+        let $mini = $('.mini');
+        let winHeight = 0;
+        let docHeight = 0;
+        let scrollHeight = 0;
 
-        // 스크롤 공간 = 전체 html 문서의 세로크기 - 뷰포트 세로 크기 ;
-        const scrollHeight = docHeight - winHeight;
+        getHeight();
+
+        // 세로크기를 구하는 함수
+        function getHeight() {
+          winHeight = $win.outerHeight();
+          docHeight = $doc.outerHeight();
+          scrollHeight = docHeight - winHeight;
+        }
 
         //이벤트 -> 스크롤
         $($win).on('scroll', function () {
@@ -31,8 +36,18 @@
 
           // 비율구하기 -> target / context * 100
           let percent = (scTop / scrollHeight) * 100 + '%';
-          $bar.css('width', percent);
           // progress-bar에 적용하기
+          $mini.css('left', percent);
+        });
+
+        // 사용자가 브라우저 창 크기를 조절했을 때 : 이벤트(resize)
+
+        $win.on('resize', function () {
+          // 세로크기 다시 구하기
+          getHeight();
+
+          //강제 이벤트 발생
+          $win.trigger('scroll');
         });
       });
     </script>
@@ -55,23 +70,25 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 10px;
+        height: 80px;
         background: #eee;
       }
 
-      .progress-wrap .progress-bar {
+      .mini {
         position: absolute;
         top: 0;
         left: 0;
-        width: 0;
-        height: 100%;
-        background: tomato;
+        width: 150px;
+        height: 80px;
+        background: url(img/mini.png) 0 0 / cover no-repeat;
+        transform: rotateY(180deg);
+        transition: 0.4s;
       }
     </style>
   </head>
   <body>
     <div class="progress-wrap">
-      <div class="progress-bar"></div>
+      <div class="mini"></div>
     </div>
 
     <div class="wrap">

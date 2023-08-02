@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>scroll</title>
+    <title>scroll - resize 애니메이션 : 방향전환</title>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
       integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
@@ -15,24 +15,57 @@
         // 대상을 변수로 저장해놓고
         const $win = $(window);
         const $doc = $(document);
-        const $bar = $('.progress-bar');
-        const winHeight = $win.outerHeight(); // border , padding이 포함된 크기
-        // 내장객체는 따옴표 없고 내부 요소는 ''를 붙여야한다
-        const docHeight = $doc.outerHeight();
-        console.log(winHeight, docHeight);
+        const $girl = $('.girl');
+        const $puppy = $('.puppy');
+        let winHeight = 0;
+        let docHeight = 0;
+        let scrollHeight = 0;
 
-        // 스크롤 공간 = 전체 html 문서의 세로크기 - 뷰포트 세로 크기 ;
-        const scrollHeight = docHeight - winHeight;
+        //여자와 강아지를 숨기고 시작
+        $girl.add($puppy).hide();
+
+        getHeight();
+
+        // 세로크기를 구하는 함수
+        function getHeight() {
+          winHeight = $win.outerHeight();
+          docHeight = $doc.outerHeight();
+          scrollHeight = docHeight - winHeight;
+        }
 
         //이벤트 -> 스크롤
         $($win).on('scroll', function () {
           let scTop = $(this).scrollTop();
-          console.log(scTop);
+          // console.log(scTop);
+          $girl.add($puppy).fadeIn();
 
           // 비율구하기 -> target / context * 100
           let percent = (scTop / scrollHeight) * 100 + '%';
-          $bar.css('width', percent);
           // progress-bar에 적용하기
+          $girl.css('left', percent);
+          $puppy.css('left', percent);
+        });
+
+        // 사용자가 브라우저 창 크기를 조절했을 때 : 이벤트(resize)
+
+        $win.on('resize', function () {
+          // 세로크기 다시 구하기
+          getHeight();
+
+          //강제 이벤트 발생
+          $win.trigger('scroll');
+        });
+
+        // 사용자가 마우스 휠을 조작했을 때 : 이벤트(resize)
+        $win.on('wheel keydown', function (e) {
+          const $mouseWheel = e.originalEvent.deltaY;
+
+          console.log(e.keyCode);
+          if ($mouseWheel < 0 || e.keyCode === 38 || e.keyCode === 33) {
+            $girl.css('transform', 'rotateY(180deg)');
+          } else if ($mouseWheel > 0 || e.keyCode === 40 || e.keyCode === 34) {
+            $girl.css('transform', 'rotateY(360deg)');
+          }
         });
       });
     </script>
@@ -55,23 +88,34 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 10px;
+        height: 80px;
         background: #eee;
       }
 
-      .progress-wrap .progress-bar {
+      .girl {
         position: absolute;
         top: 0;
         left: 0;
-        width: 0;
-        height: 100%;
-        background: tomato;
+        width: 70px;
+        height: 70px;
+        background: url(./img/walking_girl.gif) 0 0 / cover no-repeat;
+      }
+      .puppy {
+        position: absolute;
+        bottom: 15px;
+        left: ;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #55f;
+        transition: 0.4s;
       }
     </style>
   </head>
   <body>
     <div class="progress-wrap">
-      <div class="progress-bar"></div>
+      <div class="girl"></div>
+      <div class="puppy"></div>
     </div>
 
     <div class="wrap">
