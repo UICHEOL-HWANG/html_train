@@ -173,6 +173,10 @@
 
       // 동작 오늘 뭐먹지 버튼을 클릭하면
       btnRecommend.addEventListener('click', () => {
+        if (foods.length === 0) {
+          alert('음식이 비었습니다');
+          location.reload();
+        }
         const foodIdx = Math.floor(Math.random() * foods.length);
         foodImg.setAttribute('src', foods[foodIdx].img);
         foodName.textContent = foods[foodIdx].food;
@@ -183,6 +187,8 @@
 
       exclude.addEventListener('click', function (e) {
         // console.log(e.target);
+
+        // 추천 음식 배열이 비어있을 경우
 
         if (e.target.tagName === 'INPUT') {
           const category = e.target.value;
@@ -196,10 +202,6 @@
             const addFoods = allFoods.filter((food) => food.category === category);
             foods = [...foods, ...addFoods];
           }
-        }
-        if (foods.length === 0) {
-          alert('음식이 비었습니다');
-          location.reload();
         }
       });
     </script>
