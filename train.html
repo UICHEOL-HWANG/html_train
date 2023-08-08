@@ -1,0 +1,162 @@
+l<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습용</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        width: 360px;
+        margin: 20px auto 0;
+      }
+      .select,
+      .options li {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+      }
+      .select {
+        height: 60px;
+        padding: 0 20px;
+        background: #4285f4;
+        border-radius: 10px;
+        color: #ffffff;
+        justify-content: space-between;
+      }
+      .content {
+        display: none;
+        background: #ffffff;
+        margin-top: 5px;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .active .content {
+        display: block;
+      }
+
+      .content .search-box {
+        position: relative;
+      }
+      .search-box .material-icons {
+        left: 15px;
+        line-height: 53px;
+        position: absolute;
+      }
+      .search-box input {
+        height: 53px;
+        width: 100%;
+        outline: none;
+        font-size: 17px;
+        padding: 0 10px 0 43px;
+        border: 1px solid #aabb;
+        border-radius: 10px;
+      }
+      .content .options {
+        margin-top: 10px;
+        max-height: 250px;
+        overflow-y: auto;
+      }
+      .options::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+      }
+
+      .options::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 25px;
+      }
+
+      .options li {
+        height: 50px;
+        padding: 0 13px;
+        border-radius: 7px;
+      }
+      .options li:hover {
+        background: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="select">
+        <span>나라를 선택해주세요</span>
+        <span class="material-icons">expand_more</span>
+      </div>
+      <!--select-->
+      <div class="content">
+        <div class="search-box">
+          <span class="material-icons">search</span>
+          <input class="filter" type="text" placeholder="검색" />
+        </div>
+        <!--search box-->
+        <ul class="options"></ul>
+      </div>
+      <!--content-->
+    </div>
+    <!--wrapper-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+      const wrapper = document.querySelector('.wrapper');
+      const select = document.querySelector('.select');
+      const options = document.querySelector('.options');
+      const input = document.querySelector('.filter'); //input element
+
+      let countries = ['가나', '가봉', '감비아', '과테말라', '그레나다', '그리스', '기니', '네덜란드', '대한민국'];
+
+      select.addEventListener('click', function () {
+        let c = wrapper.className;
+        wrapper.classList.toggle('active');
+      });
+
+      input.addEventListener('keyup', function () {
+        //input에 글자를 적을 때마다 event발생.
+        let arr = []; //사용자가 적은 값과 일치하는 국가명을 집어넣을 새로운 배열.
+        let searchWord = input.value; //사용자 입력값
+
+        if (searchWord.length > 0) {
+          //사용자 입력값이 존재하는 경우
+
+          arr = countries
+            .filter((data) => {
+              //filter메서드를 사용해서 arr로 보내는데
+              return data.startsWith(searchWord);
+            })
+            .map((data) => `<li onclick="changeClickedName(this)">${data}</li>`)
+            .join('');
+          //map을 사용해서 데이터를 <li>태그로 감싼 것처럼 처리함.
+          //join함수를 사용해서 새배열(arr)에서 출력되는','를 없앰
+          options.innerHTML = arr ? arr : '<p>조회된 나라가 없습니다.</p>';
+          //조회되는 아이템이 없는 경우 보여주는 글귀 설정.
+        } else {
+          //사용자 입력값이 존재하지않는 경우
+          options.innerHTML = ''; //조회아이템이 없는 경우 보여주는 태그 비워주고
+          addLi(); //모든 국가명 보여주기
+        }
+      }); //input keyup event.
+
+      addLi();
+
+      function addLi() {
+        countries.forEach((country) => {
+          let li = `<li onclick="changeClickedName(this)">${country}</li>`;
+          options.insertAdjacentHTML('beforeend', li);
+        });
+      }
+
+      function changeClickedName(li) {
+        //옵션(국가명) 선택시
+        input.value = ''; //input 초기화.
+        addLi(); //모든 국가명 보여주기
+        wrapper.classList.remove('active'); //classList사용해서 active 클래스명 삭제.
+        select.firstElementChild.innerText = li.innerText; //선택된 옵션 값이 선택영역에 적용되도록 함
+      }
+    </script>
+  </body>
+</html>
