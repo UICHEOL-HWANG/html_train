@@ -1,25 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
 
 body {
   background: rgb(45, 168, 154);
   height: 100vh;
-  font-family: 'Yellowtail', cursive;
+  font-family: "Yellowtail", cursive;
 }
 
-.inner {
+.dim {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.detail-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  background: #fff;
+  width: 1000px;
+
+  aspect-ratio: 16/9;
+  opacity: 0;
+  transition: 0.4s;
+  pointer-events: none;
+  user-select: none;
+}
+
+.detail-wrap.active {
+  top: 50%;
+  opacity: 1;
+  pointer-events: auto;
+  user-select: auto;
+}
+
+.detail-wrap .btn-close {
+  position: absolute;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  top: 1;
+  right: -50px;
+  width: 50px;
+  height: 50px;
+  z-index: 50;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.detail-wrap .detail-list {
+  flex: 1 1 20%;
+  overflow: hidden;
+}
+
+.detail-list .detail-view {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+.detail-view .detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-info {
+  padding: 30px;
+  background: #fff;
+  text-align: center;
+  font-family: "Pretendard";
+}
+
+.detail-info dd {
+  margin-top: 20px;
+}
+
+.wrap .inner {
   text-align: center;
   width: 1344px;
   height: 100%;
   margin: 0 auto;
 }
 
-form .material-icons {
-  left: 713px;
-  top: 115px;
-  line-height: 53px;
-  position: absolute;
+.main-content h1 {
+  font-weight: 500px;
+  font-size: 50px;
 }
-form input {
+
+form .filter {
   height: 53px;
   width: 500px;
   outline: none;
@@ -27,57 +104,96 @@ form input {
   padding: 0 10px 0 43px;
   border: 1px solid #aabb;
   border-radius: 10px;
-}
-
-.main-content {
-  margin: 50px 0 60px;
-}
-.filter {
   margin-top: 20px;
+  font-size: 25px;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 100px;
+form {
+  position: relative;
 }
 
-nav .cake-list {
+.search-icon {
+  position: absolute;
+  top: 65%;
+  left: 33.2%;
+  transform: translate(-50%, -50%);
+}
+.main-content {
+  margin: 12px 0;
+}
+
+.cake-list {
   display: flex;
+  flex-wrap: wrap;
   /* background: yellow; */
   gap: 30px;
-  margin-top: 150px;
+
+  justify-content: center;
+  align-items: center;
 }
 
 .cake-list li {
-  height: 300px;
+  /* flex: 1 1 20%; */
   width: 300px;
-  border: 1px solid #000;
+  margin: 50px auto;
+
+  /* border: 1px solid #000; */
+  /* flex: 1 1 20%; */
+  /* overflow: hidden; */
+  cursor: pointer;
 }
 
 .cake-list li figure {
-  aspect-ratio: 4/3; /* 종횡비 틀을 만들어 일정하게 유지 시켜줌 */
+  aspect-ratio: 4/3;
 }
 
 .cake-list li figure img {
   width: 100%;
   height: 100%;
+  background-position: center;
   object-fit: cover;
 }
 
-.cake-list li dl dd {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-}
-
 .cake-list li dl {
-  margin-top: 10px;
+  padding-left: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  align-items: center;
+  position: relative;
 }
 
 .cake-list li dl dd {
-  margin-top: 5px;
+  font-weight: bold;
+  font-size: 19px;
+  position: absolute;
+  top: 15px;
+  right: 17px;
+}
+.cake-list li dl dt {
+  font-weight: bold;
+  font-size: 19px;
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  text-transform: capitalize;
+}
+
+.btn-form {
+  margin-top: 30px;
+}
+
+.btn-form button {
+  width: 95px;
+  height: 30px;
+  border: 1px solid #000;
+  gap: 0 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.btn-form button:hover {
+  background: #000;
+  color: #fff;
 }
